@@ -17,6 +17,11 @@ import ContactCards from "../sections/ContactCards.astro";
 import SiteFooter from "../sections/SiteFooter.astro";
 
 import { servicePageSchema, type ServicePageContent } from "../content/schemas";
+import {
+  breadcrumbListSchema,
+  faqPageSchema,
+  serviceSchema,
+} from "../lib/structured-data";
 
 export const getStaticPaths = (() => {
   const modules = import.meta.glob<{ default: unknown }>(
@@ -37,6 +42,30 @@ interface Props {
 
 const { data } = Astro.props as Props;
 const { header, content, footer } = data;
+
+const siteOrigin = (Astro.site ?? new URL("https://atlantaleakdetection.vercel.app/")).href;
+const pageUrl = new URL(Astro.url.pathname, siteOrigin).toString();
+const businessName = data.header.navbar?.logo?.primary ?? "Atlanta Leak Detection Pros";
+const serviceName = content.hero?.heading ?? data.meta.title;
+
+const jsonLd = [
+  serviceSchema({
+    name: serviceName,
+    description: data.meta.description,
+    url: pageUrl,
+    areaServed: ["Atlanta, GA", "Metro Atlanta"],
+    provider: {
+      name: businessName,
+      url: siteOrigin,
+      id: `${siteOrigin.replace(/\/$/, "")}/#business`,
+    },
+  }),
+  breadcrumbListSchema([
+    { name: "Home", url: siteOrigin },
+    { name: serviceName, url: pageUrl },
+  ]),
+  faqPageSchema(content.faqs?.items ?? []),
+].filter((s): s is Record<string, unknown> => s !== null);
 ---
 
 <Layout
@@ -46,6 +75,7 @@ const { header, content, footer } = data;
   ogImage={data.meta.ogImage}
   noindex={data.meta.noindex}
   lang={data.meta.lang}
+  jsonLd={jsonLd}
 >
   {header.navbar && <Navbar {...header.navbar} />}
 

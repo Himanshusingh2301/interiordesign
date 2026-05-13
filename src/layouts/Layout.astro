@@ -16,6 +16,8 @@ export interface Props {
   noindex?: boolean;
   /** HTML lang attribute */
   lang?: string;
+  /** Optional list of JSON-LD objects to emit in <head>. */
+  jsonLd?: Array<Record<string, unknown>>;
 }
 
 const {
@@ -26,6 +28,7 @@ const {
   ogType = "website",
   noindex = false,
   lang = "en",
+  jsonLd = [],
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? new URL("http://localhost:4321");
@@ -68,6 +71,12 @@ const ogImageUrl = ogImage
 
     <!-- Theme -->
     <meta name="theme-color" content="#ffffff" />
+
+    {
+      jsonLd.map((item) => (
+        <script type="application/ld+json" set:html={JSON.stringify(item)} />
+      ))
+    }
   </head>
   <body class="antialiased">
     <slot />

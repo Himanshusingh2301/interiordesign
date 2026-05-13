@@ -17,11 +17,22 @@ import SiteFooter from "../sections/SiteFooter.astro";
 
 import { aboutPageSchema } from "../content/schemas";
 import aboutData from "../content/pages/about.json";
+import { breadcrumbListSchema } from "../lib/structured-data";
 
 // Each section renders ONLY when its slot is present in about.json.
 // Add a slot to show the section, remove it to hide it.
 const page = aboutPageSchema.parse(aboutData);
 const { header, content, footer } = page;
+
+const siteOrigin = (Astro.site ?? new URL("https://atlantaleakdetection.vercel.app/")).href;
+const breadcrumb = breadcrumbListSchema([
+  { name: "Home", url: siteOrigin },
+  { name: "About", url: new URL("/about/", siteOrigin).toString() },
+]);
+
+const jsonLd = [breadcrumb].filter(
+  (s): s is Record<string, unknown> => s !== null,
+);
 ---
 
 <Layout
@@ -31,6 +42,7 @@ const { header, content, footer } = page;
   ogImage={page.meta.ogImage}
   noindex={page.meta.noindex}
   lang={page.meta.lang}
+  jsonLd={jsonLd}
 >
   {header.navbar && <Navbar {...header.navbar} />}
 

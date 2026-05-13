@@ -44,19 +44,6 @@ const {
   items = DEFAULT_ITEMS,
   defaultOpenIndex = 0,
 } = Astro.props;
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: items.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
 ---
 
 <section class="relative overflow-hidden bg-slate-50 py-16 lg:py-24">
@@ -141,8 +128,6 @@ const faqSchema = {
     </div>
   </div>
 
-  <!-- SEO FAQ Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </section>
 
 <style>

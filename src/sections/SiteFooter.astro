@@ -81,28 +81,6 @@ const telHref = contact.phone
   ? `tel:${contact.phone.replace(/[^\d+]/g, "")}`
   : undefined;
 const mailHref = contact.email ? `mailto:${contact.email}` : undefined;
-
-const siteUrl = Astro.site?.href ?? "https://atlantaleakdetection.vercel.app/";
-const telDigits = contact.phone?.replace(/[^\d+]/g, "") ?? "";
-const telephoneE164 =
-  telDigits.startsWith("+") ? telDigits : telDigits ? `+1${telDigits.replace(/^1/, "")}` : undefined;
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: `${logo.secondary ?? ""} ${logo.primary ?? ""}`.trim(),
-  url: siteUrl,
-  ...(telephoneE164 && { telephone: telephoneE164 }),
-  ...(contact.email && { email: contact.email }),
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "305 Raleigh St # E",
-    addressLocality: "Wilmington",
-    addressRegion: "NC",
-    postalCode: "28412",
-    addressCountry: "US",
-  },
-};
 ---
 
 <footer class="border-t border-slate-200 bg-white text-slate-800">
@@ -249,5 +227,4 @@ const localBusinessSchema = {
     </div>
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 </footer>
