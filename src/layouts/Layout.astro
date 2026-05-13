@@ -18,6 +18,8 @@ export interface Props {
   lang?: string;
   /** Optional list of JSON-LD objects to emit in <head>. */
   jsonLd?: Array<Record<string, unknown>>;
+  /** Preload the hero/LCP image to speed up first paint. */
+  preloadImage?: string;
 }
 
 const {
@@ -29,6 +31,7 @@ const {
   noindex = false,
   lang = "en",
   jsonLd = [],
+  preloadImage,
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? new URL("http://localhost:4321");
@@ -64,6 +67,17 @@ const ogImageUrl = ogImage
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
+    {
+      preloadImage && (
+        <link
+          rel="preload"
+          as="image"
+          href={preloadImage}
+          fetchpriority="high"
+        />
+      )
+    }
 
     <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

@@ -76,6 +76,7 @@ const jsonLd = [
   noindex={data.meta.noindex}
   lang={data.meta.lang}
   jsonLd={jsonLd}
+  preloadImage={content.hero?.image?.src}
 >
   {header.navbar && <Navbar {...header.navbar} />}
 

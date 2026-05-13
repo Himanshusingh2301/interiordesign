@@ -43,6 +43,7 @@ const jsonLd = [breadcrumb].filter(
   noindex={page.meta.noindex}
   lang={page.meta.lang}
   jsonLd={jsonLd}
+  preloadImage={content.hero?.image?.src}
 >
   {header.navbar && <Navbar {...header.navbar} />}
 
