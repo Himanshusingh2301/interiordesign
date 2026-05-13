@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Leak Detection Atlanta, GA | Fast & Accurate Leak Detection Services",
-    "description": "Professional leak detection in Atlanta, GA. We locate slab leaks, water leaks, gas leaks, and pool leaks using non-invasive technology and fast response service.",
+    "title": "Leak Detection Atlanta, GA | Fast & Accurate Service",
+    "description": "Professional leak detection in Atlanta, GA. Locate water, slab, gas, and pool leaks with non-invasive technology and same-day response.",
     "canonical": "https://atlantaleakdetection.vercel.app/",
     "ogImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
     "lang": "en"
@@ -86,26 +86,26 @@
       }
     },
 
-    "whyChooseUs":{
-      "heading": "Why Choose Our Outdoor Lighting Company",
-      "intro": "We provide custom outdoor lighting solutions in Wilmington designed for long-term durability, energy efficiency, coastal protection, and beautiful nighttime curb appeal.",
+    "whyChooseUs": {
+      "heading": "Why Choose Our Atlanta Leak Detection Team",
+      "intro": "Fast, non-invasive leak detection across the Atlanta metro. Accurate findings, clear written reports, and respect for your property — every job.",
       "columns": 4,
       "items": [
         {
-          "title": "Coastal-Grade Fixtures",
-          "description": "We install marine-grade brass and solid copper outdoor lighting fixtures specifically designed to resist corrosion caused by Wilmington’s salty coastal air and humid weather conditions."
+          "title": "Non-Invasive Technology",
+          "description": "Acoustic listening, thermal imaging, tracer gas, and pressure testing locate leaks without tearing into walls, floors, or slabs."
         },
         {
-          "title": "Turtle-Safe Lighting",
-          "description": "Our outdoor lighting systems follow Wilmington dark sky and sea turtle lighting guidelines while still providing safe, attractive, and functional illumination for your property."
+          "title": "Fast Atlanta-Wide Response",
+          "description": "Same-day and next-day inspection slots across metro Atlanta for urgent water, slab, gas, and pool leaks."
         },
         {
-          "title": "Low Maintenance Systems",
-          "description": "We use waterproof wiring, sealed connections, and professional-grade LED fixtures that reduce maintenance needs and improve long-term outdoor lighting performance."
+          "title": "Licensed & Insured",
+          "description": "All work is performed by licensed leak detection specialists carrying full liability and workers' compensation insurance."
         },
         {
-          "title": "Experienced Installers",
-          "description": "Our outdoor lighting specialists design and install customized lighting systems that improve curb appeal, nighttime visibility, safety, and overall property value."
+          "title": "Clear Findings Reports",
+          "description": "Every inspection ends with a written report covering leak location, severity, and the exact repair scope your plumber needs."
         }
       ]
     },
