@@ -16,29 +16,19 @@ export interface Props {
 }
 
 const DEFAULT_PARAGRAPHS = [
-  "Outdoor lighting Wilmington company is dedicated to making Wilmington homes shine safely and beautifully.",
-  "We believe in using only the best materials that can handle our coastal weather. Our goal is to give you a yard you are proud to show off.",
-  "We carefully select our outdoor lighting partners who are certified, insured and experienced in handling complex lighting projects. They know the local neighborhoods from Airlie Gardens to the riverfront.",
-  "We focus on customer service and clear communication at every step. You will always know what is happening with your project.",
+  "We are committed to delivering high-quality service with honest communication and dependable results.",
+  "Our team brings the right tools, training, and experience to every job — large or small.",
+  "Reach out using the form and we'll get back to you with the information you need.",
 ];
 
-const DEFAULT_SERVICES = [
-  "Landscape Lighting Design",
-  "Deck and Patio Lighting",
-  "Pathway & Walkway Lighting",
-  "Outdoor Security Lighting",
-  "Architectural & Facade Lighting",
-  "Commercial Lighting",
-  "Holiday/Christmas Lighting",
-  "Repair & Maintenance",
-];
+const DEFAULT_SERVICES = ["General inquiry", "Quote request", "Other"];
 
 const {
   heading = "About Our Company",
   paragraphs = DEFAULT_PARAGRAPHS,
   cta = {
-    label: "Call (910) 218-9037",
-    href: "tel:+19102189037",
+    label: "Contact us",
+    href: "#contact",
   },
   form = {},
 } = Astro.props;
@@ -51,7 +41,7 @@ const {
 } = form;
 
 const inputClass =
-  "w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition focus:border-[#E89938] focus:outline-none focus:ring-2 focus:ring-[#E89938]/30";
+  "w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30";
 ---
 
 <section id="about" class="bg-white">
@@ -72,7 +62,7 @@ const inputClass =
 
         <a
           href={cta.href}
-          class="mt-8 inline-flex items-center gap-2 rounded-md bg-[#E89938] px-6 py-3 text-base font-bold text-white shadow-sm transition-colors hover:bg-[#d98730] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E89938]"
+          class="mt-8 inline-flex items-center gap-2 rounded-md bg-brand px-6 py-3 text-base font-bold text-white shadow-sm transition-colors hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +150,7 @@ const inputClass =
 
         <button
           type="submit"
-          class="inline-flex items-center justify-center rounded-md bg-[#E89938] px-6 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-[#d98730] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E89938]"
+          class="inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
         >
           {submitLabel}
         </button>

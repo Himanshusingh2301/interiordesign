@@ -2,12 +2,12 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
+import { siteConfig } from './src/site.config.ts';
 
-// https://astro.build/config
+// All site identity (URL, business name, brand color tints, etc.) lives in
+// src/site.config.ts. Editing that file is the single per-site change.
 export default defineConfig({
-  // Production URL — drives canonical fallbacks and absolute OG image URLs.
-  // When you add a custom domain on Vercel, update this and public/sitemap.xml + robots.txt.
-  site: 'https://atlantaleakdetection.vercel.app',
+  site: siteConfig.url,
 
   vite: {
     plugins: [tailwindcss()],

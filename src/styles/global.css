@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/* Brand color tokens. To re-skin the site, change values here only.
+   Tailwind v4 turns each `--color-*` token into a full utility set
+   (`bg-brand`, `text-brand`, `border-brand`, `bg-brand/30`, etc.). */
+@theme {
+  --color-brand: #e89938;
+  --color-brand-hover: #d98730;
+  --color-brand-tint: #fff7ec;
+  --color-brand-tint-soft: #fff4e7;
+  --color-brand-tint-pale: #fff8ef;
+  --color-brand-tint-warm: #fff6e8;
+  --color-brand-tint-cream: #fffdf8;
+}
+
 /* Prevent horizontal scrollbar / page jiggle without affecting vertical scroll
    or `position: sticky`. SEO-neutral: purely visual. */
 html,

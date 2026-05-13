@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://atlantaleakdetection.vercel.app/</loc>
-  </url>
-  <url>
-    <loc>https://atlantaleakdetection.vercel.app/about/</loc>
-  </url>
-  <url>
-    <loc>https://atlantaleakdetection.vercel.app/water-leak-detection/</loc>
-  </url>
-  <url>
-    <loc>https://atlantaleakdetection.vercel.app/slab-leak-detection/</loc>
-  </url>
-  <url>
-    <loc>https://atlantaleakdetection.vercel.app/gas-leak-detection/</loc>
-  </url>
-  <url>
-    <loc>https://atlantaleakdetection.vercel.app/pool-leak-detection/</loc>
-  </url>
+  <url><loc>https://atlantaleakdetection.vercel.app/</loc></url>
+  <url><loc>https://atlantaleakdetection.vercel.app/about/</loc></url>
+  <url><loc>https://atlantaleakdetection.vercel.app/gas-leak-detection/</loc></url>
+  <url><loc>https://atlantaleakdetection.vercel.app/pool-leak-detection/</loc></url>
+  <url><loc>https://atlantaleakdetection.vercel.app/slab-leak-detection/</loc></url>
+  <url><loc>https://atlantaleakdetection.vercel.app/water-leak-detection/</loc></url>
 </urlset>

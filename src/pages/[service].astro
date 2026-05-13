@@ -22,6 +22,11 @@ import {
   faqPageSchema,
   serviceSchema,
 } from "../lib/structured-data";
+import {
+  siteConfig,
+  siteOrigin as defaultOrigin,
+  businessJsonLdId,
+} from "../site.config";
 
 export const getStaticPaths = (() => {
   const modules = import.meta.glob<{ default: unknown }>(
@@ -43,9 +48,9 @@ interface Props {
 const { data } = Astro.props as Props;
 const { header, content, footer } = data;
 
-const siteOrigin = (Astro.site ?? new URL("https://atlantaleakdetection.vercel.app/")).href;
+const siteOrigin = (Astro.site ?? new URL(defaultOrigin)).href;
 const pageUrl = new URL(Astro.url.pathname, siteOrigin).toString();
-const businessName = data.header.navbar?.logo?.primary ?? "Atlanta Leak Detection Pros";
+const businessName = data.header.navbar?.logo?.primary ?? siteConfig.business.name;
 const serviceName = content.hero?.heading ?? data.meta.title;
 
 const jsonLd = [
@@ -53,11 +58,11 @@ const jsonLd = [
     name: serviceName,
     description: data.meta.description,
     url: pageUrl,
-    areaServed: ["Atlanta, GA", "Metro Atlanta"],
+    areaServed: [...siteConfig.business.areaServed],
     provider: {
       name: businessName,
       url: siteOrigin,
-      id: `${siteOrigin.replace(/\/$/, "")}/#business`,
+      id: businessJsonLdId,
     },
   }),
   breadcrumbListSchema([

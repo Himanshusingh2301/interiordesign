@@ -28,7 +28,7 @@ const {
 <section class="relative overflow-hidden bg-[#fcfcfb] py-20 lg:py-28">
   <!-- Background Elements -->
   <div class="absolute inset-0">
-    <div class="absolute left-0 top-0 h-72 w-72 rounded-full bg-[#E89938]/5 blur-3xl"></div>
+    <div class="absolute left-0 top-0 h-72 w-72 rounded-full bg-brand/5 blur-3xl"></div>
     <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-amber-100/30 blur-3xl"></div>
   </div>
 
@@ -42,8 +42,8 @@ const {
       <div class="relative">
         <!-- Accent -->
         <div class="mb-6 flex items-center gap-3">
-          <span class="h-px w-14 bg-gradient-to-r from-[#E89938] to-transparent"></span>
-          <span class="h-2 w-2 rounded-full bg-[#E89938]"></span>
+          <span class="h-px w-14 bg-gradient-to-r from-brand to-transparent"></span>
+          <span class="h-2 w-2 rounded-full bg-brand"></span>
         </div>
 
         <h2
@@ -57,8 +57,8 @@ const {
         >
           {paragraphs.map((p) => (
             <div class="group flex items-start gap-4">
-              <div class="mt-2 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#E89938]/20 bg-[#fff7ec] transition-all duration-300 group-hover:scale-110 group-hover:border-[#E89938]/40">
-                <div class="h-2 w-2 rounded-full bg-[#E89938]"></div>
+              <div class="mt-2 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-brand/20 bg-brand-tint transition-all duration-300 group-hover:scale-110 group-hover:border-brand/40">
+                <div class="h-2 w-2 rounded-full bg-brand"></div>
               </div>
 
               <p class="max-w-xl">{p}</p>
@@ -70,14 +70,14 @@ const {
       <!-- Image -->
       <div class="relative">
         <!-- Decorative Shapes -->
-        <div class="absolute -left-6 -top-6 h-24 w-24 rounded-3xl border border-[#E89938]/10 bg-[#fff7ec] backdrop-blur-sm"></div>
+        <div class="absolute -left-6 -top-6 h-24 w-24 rounded-3xl border border-brand/10 bg-brand-tint backdrop-blur-sm"></div>
 
-        <div class="absolute -bottom-6 -right-6 h-32 w-32 rounded-full border border-amber-100 bg-gradient-to-br from-[#fff8ef] to-white"></div>
+        <div class="absolute -bottom-6 -right-6 h-32 w-32 rounded-full border border-amber-100 bg-gradient-to-br from-brand-tint-pale to-white"></div>
 
         <!-- Main Card -->
         <div class="group relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/70 p-3 shadow-[0_20px_70px_rgba(0,0,0,0.08)] backdrop-blur-xl">
           <!-- Glow -->
-          <div class="absolute inset-0 bg-gradient-to-br from-[#E89938]/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 
           <!-- Image -->
           <div class="overflow-hidden rounded-[1.5rem]">
@@ -95,7 +95,7 @@ const {
           <!-- Floating Badge -->
           <div class="absolute bottom-8 left-8 rounded-2xl border border-white/50 bg-white/85 px-5 py-4 shadow-lg backdrop-blur-md">
             <div class="flex items-center gap-3">
-              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#E89938] to-[#d98730] shadow-md">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand to-brand-hover shadow-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5 text-white"
@@ -121,7 +121,7 @@ const {
         </div>
 
         <!-- Outer Glow -->
-        <div class="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-r from-[#E89938]/10 via-transparent to-amber-100/20 blur-2xl"></div>
+        <div class="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-r from-brand/10 via-transparent to-amber-100/20 blur-2xl"></div>
       </div>
     </div>
   </div>

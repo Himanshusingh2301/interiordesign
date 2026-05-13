@@ -7,10 +7,12 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "tsx scripts/build-sitemap.ts",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "content:ai": "tsx --env-file=.env scripts/content-ai.ts"
+    "content:ai": "tsx --env-file=.env scripts/content-ai.ts",
+    "sitemap": "tsx scripts/build-sitemap.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

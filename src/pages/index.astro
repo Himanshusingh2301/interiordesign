@@ -21,14 +21,15 @@ import {
   faqPageSchema,
   localBusinessSchema,
 } from "../lib/structured-data";
+import { siteConfig, siteOrigin } from "../site.config";
 
 // Slots in home.json are optional overrides. Each section below always mounts;
 // missing or partial slot data falls back to that section's built-in defaults.
 const home = homePageSchema.parse(homeData);
 const { header, content, footer } = home;
 
-const siteUrl = (Astro.site ?? new URL("https://atlantaleakdetection.vercel.app/")).href;
-const businessName = home.header.navbar?.logo?.primary ?? "Atlanta Leak Detection Pros";
+const siteUrl = (Astro.site ?? new URL(siteOrigin)).href;
+const businessName = home.header.navbar?.logo?.primary ?? siteConfig.business.name;
 const footerContact = footer.siteFooter?.contact;
 const socialLinks =
   footer.siteFooter?.social?.map((s) => s.href).filter((href) => !!href) ?? [];
@@ -40,13 +41,15 @@ const jsonLd = [
     description: home.meta.description,
     telephone: footerContact?.phone,
     email: footerContact?.email,
-    addressLocality: "Atlanta",
-    addressRegion: "GA",
-    addressCountry: "US",
-    areaServed: ["Atlanta, GA", "Metro Atlanta"],
-    priceRange: "$$",
+    streetAddress: siteConfig.business.streetAddress || undefined,
+    postalCode: siteConfig.business.postalCode || undefined,
+    addressLocality: siteConfig.business.addressLocality,
+    addressRegion: siteConfig.business.addressRegion,
+    addressCountry: siteConfig.business.addressCountry,
+    areaServed: [...siteConfig.business.areaServed],
+    priceRange: siteConfig.business.priceRange,
     sameAs: socialLinks,
-    openingHours: ["Mo-Sa 08:00-18:00"],
+    openingHours: [...siteConfig.business.openingHours],
   }),
   faqPageSchema(content.faqs?.items ?? []),
 ].filter((s): s is Record<string, unknown> => s !== null);

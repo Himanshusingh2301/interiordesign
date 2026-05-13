@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { siteConfig } from "../site.config";
 
 export interface Props {
   /** Page title — drives <title> and og:title */
@@ -29,7 +30,7 @@ const {
   ogImage,
   ogType = "website",
   noindex = false,
-  lang = "en",
+  lang = siteConfig.lang,
   jsonLd = [],
   preloadImage,
 } = Astro.props;

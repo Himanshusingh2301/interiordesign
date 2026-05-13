@@ -72,8 +72,8 @@ const {
         class="group relative flex shrink-0 items-center gap-3"
         aria-label={`${logo.secondary ?? ""} ${logo.primary ?? "Home"}`.trim()}
       >
-        <div class="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-[#E89938]/20 bg-gradient-to-br from-[#fff6e8] to-[#fffdf8] shadow-[0_10px_30px_rgba(232,153,56,0.12)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_14px_35px_rgba(232,153,56,0.22)]">
-          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#E89938]/10 to-transparent"></div>
+        <div class="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/20 bg-gradient-to-br from-brand-tint-warm to-brand-tint-cream shadow-[0_10px_30px_rgba(232,153,56,0.12)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_14px_35px_rgba(232,153,56,0.22)]">
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand/10 to-transparent"></div>
 
           <svg
             viewBox="0 0 40 40"
@@ -120,7 +120,7 @@ const {
         </div>
 
         <span class="flex flex-col leading-none">
-          <span class="text-[10px] font-medium tracking-[0.28em] text-[#E89938] uppercase">
+          <span class="text-[10px] font-medium tracking-[0.28em] text-brand uppercase">
             {logo.secondary}
           </span>
 
@@ -147,7 +147,7 @@ const {
                   <>
                     <a
                       href={item.href}
-                      class="inline-flex items-center gap-1.5 rounded-full px-5 py-3 text-[15px] font-medium text-gray-700 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]"
+                      class="inline-flex items-center gap-1.5 rounded-full px-5 py-3 text-[15px] font-medium text-gray-700 transition-all duration-200 hover:bg-brand-tint-soft hover:text-brand"
                     >
                       <span>{item.label}</span>
 
@@ -180,7 +180,7 @@ const {
                             <li>
                               <a
                                 href={child.href}
-                                class="group/item flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]"
+                                class="group/item flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-brand-tint-soft hover:text-brand"
                               >
                                 <span>{child.label}</span>
 
@@ -208,7 +208,7 @@ const {
                 ) : (
                   <a
                     href={item.href}
-                    class="inline-flex items-center rounded-full px-5 py-3 text-[15px] font-medium text-gray-700 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]"
+                    class="inline-flex items-center rounded-full px-5 py-3 text-[15px] font-medium text-gray-700 transition-all duration-200 hover:bg-brand-tint-soft hover:text-brand"
                   >
                     {item.label}
                   </a>
@@ -224,7 +224,7 @@ const {
         <!-- CTA -->
         <a
           href={cta.href}
-          class="group hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#E89938] to-[#d98730] px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(232,153,56,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(232,153,56,0.45)]"
+          class="group hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand to-brand-hover px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(232,153,56,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(232,153,56,0.45)]"
         >
           <span>{cta.label}</span>
 
@@ -247,7 +247,7 @@ const {
         <!-- Mobile Menu -->
         <details class="relative lg:hidden">
           <summary
-            class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl border border-gray-200 bg-white/80 text-gray-700 shadow-sm backdrop-blur transition-all duration-200 hover:border-[#E89938]/30 hover:bg-[#fff8ef] hover:text-[#E89938]"
+            class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl border border-gray-200 bg-white/80 text-gray-700 shadow-sm backdrop-blur transition-all duration-200 hover:border-brand/30 hover:bg-brand-tint-pale hover:text-brand"
           >
             <span class="sr-only">Toggle menu</span>
 
@@ -276,7 +276,7 @@ const {
                     <li>
                       {item.children && item.children.length > 0 ? (
                         <details class="group/mobile rounded-2xl border border-gray-100 bg-gray-50/60">
-                          <summary class="flex cursor-pointer items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-semibold text-gray-800 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]">
+                          <summary class="flex cursor-pointer items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-semibold text-gray-800 transition-all duration-200 hover:bg-brand-tint-soft hover:text-brand">
                             <span>{item.label}</span>
 
                             <svg
@@ -301,7 +301,7 @@ const {
                               <li>
                                 <a
                                   href={child.href}
-                                  class="block rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white hover:text-[#E89938]"
+                                  class="block rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white hover:text-brand"
                                 >
                                   {child.label}
                                 </a>
@@ -312,7 +312,7 @@ const {
                       ) : (
                         <a
                           href={item.href}
-                          class="block rounded-2xl border border-gray-100 bg-gray-50/60 px-4 py-3.5 text-[15px] font-semibold text-gray-800 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]"
+                          class="block rounded-2xl border border-gray-100 bg-gray-50/60 px-4 py-3.5 text-[15px] font-semibold text-gray-800 transition-all duration-200 hover:bg-brand-tint-soft hover:text-brand"
                         >
                           {item.label}
                         </a>
@@ -325,7 +325,7 @@ const {
 
             <a
               href={cta.href}
-              class="mt-4 flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#E89938] to-[#d98730] px-4 py-4 text-center text-sm font-bold text-white shadow-[0_10px_30px_rgba(232,153,56,0.3)] sm:hidden"
+              class="mt-4 flex items-center justify-center rounded-2xl bg-gradient-to-r from-brand to-brand-hover px-4 py-4 text-center text-sm font-bold text-white shadow-[0_10px_30px_rgba(232,153,56,0.3)] sm:hidden"
             >
               {cta.label}
             </a>
