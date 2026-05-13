@@ -82,7 +82,7 @@ const telHref = contact.phone
   : undefined;
 const mailHref = contact.email ? `mailto:${contact.email}` : undefined;
 
-const siteUrl = Astro.site?.href ?? "https://example.com/";
+const siteUrl = Astro.site?.href ?? "https://atlantaleakdetection.vercel.app/";
 const telDigits = contact.phone?.replace(/[^\d+]/g, "") ?? "";
 const telephoneE164 =
   telDigits.startsWith("+") ? telDigits : telDigits ? `+1${telDigits.replace(/^1/, "")}` : undefined;

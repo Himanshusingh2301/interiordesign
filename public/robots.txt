@@ -1,0 +1,5 @@
+# https://atlantaleakdetection.vercel.app/
+User-agent: *
+Allow: /
+
+Sitemap: https://atlantaleakdetection.vercel.app/sitemap-index.xml

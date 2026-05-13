@@ -2,7 +2,7 @@
   "meta": {
     "title": "About Us | Atlanta Leak Detection Pros",
     "description": "Atlanta's trusted leak detection team — non-invasive water, slab, gas, and pool leak detection backed by experienced specialists and modern equipment.",
-    "canonical": "https://www.atlantaleakdetectionpros.com/about/",
+    "canonical": "https://atlantaleakdetection.vercel.app/about/",
     "ogImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
     "lang": "en"
   },

@@ -6,9 +6,9 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: replace with your real production domain before deploying.
-  // Required for sitemap generation, canonical URLs, and absolute OG image URLs.
-  site: 'https://example.com',
+  // Production URL — drives sitemap, canonical fallbacks, and absolute OG image URLs.
+  // When you add a custom domain on Vercel, update this to match your primary domain.
+  site: 'https://atlantaleakdetection.vercel.app',
 
   vite: {
     plugins: [tailwindcss()],
