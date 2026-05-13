@@ -1,0 +1,71 @@
+---
+export interface Props {
+  heading?: string;
+  body?: string;
+  cta?: {
+    label: string;
+    href: string;
+  };
+  /** Visual variant. "dark" matches the navy reference; "primary" is amber-on-white. */
+  variant?: "dark" | "primary";
+}
+
+const {
+  heading = "Ready To Illuminate Your Wilmington Home?",
+  body = "Join hundreds of happy homeowners in Wrightsville, Leland, and other surrounding areas in Wilmington.",
+  cta = {
+    label: "Call (910) 218-9037",
+    href: "tel:+19102189037",
+  },
+  variant = "dark",
+} = Astro.props;
+
+const isDark = variant === "dark";
+
+const sectionClass = isDark
+  ? "bg-[#0F1B36] text-white"
+  : "bg-amber-50 text-slate-900";
+
+const bodyClass = isDark ? "text-white/85" : "text-slate-700";
+---
+
+<section class={sectionClass}>
+  <div
+    class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20 text-center"
+  >
+    <h2
+      class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight"
+    >
+      {heading}
+    </h2>
+
+    {
+      body && (
+        <p class={`mt-4 text-base sm:text-lg leading-relaxed ${bodyClass}`}>
+          {body}
+        </p>
+      )
+    }
+
+    <div class="mt-8 flex justify-center">
+      <a
+        href={cta.href}
+        class="inline-flex items-center gap-2 rounded-md bg-[#E89938] px-7 py-3.5 text-base font-bold text-white shadow-md transition-colors hover:bg-[#d98730] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-4 w-4"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-.43 1.402L5.27 8.962a11.04 11.04 0 0 0 5.768 5.769l1.162-1.13a1.5 1.5 0 0 1 1.402-.43l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-7.18 0-13-5.82-13-13V3.5Z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span>{cta.label}</span>
+      </a>
+    </div>
+  </div>
+</section>

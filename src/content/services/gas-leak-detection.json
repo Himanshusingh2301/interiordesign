@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "title": "Gas Leak Detection Atlanta, GA | Fast, Safe & Accurate",
+    "description": "Atlanta gas leak detection specialists. We safely locate natural gas and propane leaks indoors and outdoors using calibrated detectors and pressure testing.",
+    "canonical": "https://www.atlantaleakdetectionpros.com/gas-leak-detection/",
+    "ogImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+    "lang": "en"
+  },
+
+  "header": {
+    "navbar": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Fast & Accurate Leak Detection",
+        "href": "/"
+      },
+      "navItems": [
+        { "label": "Home", "href": "/" },
+        {
+          "label": "Services",
+          "href": "#services",
+          "children": [
+            { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+            { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+            { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+            { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+          ]
+        },
+        { "label": "About", "href": "/about/" },
+        { "label": "FAQs", "href": "#faqs" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "cta": {
+        "label": "Call Now",
+        "href": "tel:+14045550199"
+      }
+    }
+  },
+
+  "content": {
+    "hero": {
+      "heading": "Gas Leak Detection in Atlanta, GA",
+      "cta": {
+        "label": "Request Gas Leak Inspection",
+        "href": "#contact"
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1920&q=80",
+        "alt": "Technician using a calibrated gas detector near a residential gas line in Atlanta"
+      }
+    },
+
+    "intro": {
+      "heading": "Take Gas Leaks Seriously — Find Them Fast",
+      "paragraphs": [
+        "If you smell sulfur or rotten eggs, hear hissing near a gas line, or see dead vegetation along a buried line, treat it as urgent. Leave the building, then call us. Our Atlanta specialists use calibrated combustible-gas detectors, pressure decay tests, and tracer gas to safely locate natural gas and propane leaks in homes, businesses, and yards.",
+        "We work alongside your gas company and licensed plumber when needed. You get a clear, documented finding so the repair is targeted and safe."
+      ],
+      "image": {
+        "src": "https://images.unsplash.com/photo-1581578017428-d2c19b62122d?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Closeup of a calibrated gas leak detector at a meter set"
+      }
+    },
+
+    "benefits": {
+      "heading": "Why Choose Our Gas Leak Detection",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Safety-First Protocol",
+          "description": "We follow strict safety procedures, ventilate the area, and coordinate with the gas utility for serious leaks."
+        },
+        {
+          "title": "Calibrated Detectors",
+          "description": "Professional-grade combustible-gas analyzers identify even trace concentrations along pipes, valves, and appliances."
+        },
+        {
+          "title": "Pressure Decay Testing",
+          "description": "Section-by-section testing isolates the leaking branch of your gas system so the repair is exact."
+        },
+        {
+          "title": "Indoor & Outdoor",
+          "description": "From appliance flex lines to buried yard lines, we locate leaks both inside the structure and along underground service."
+        },
+        {
+          "title": "Tracer Gas for Underground Lines",
+          "description": "Hydrogen-nitrogen tracer gas pinpoints buried line leaks accurately so excavation is minimized."
+        },
+        {
+          "title": "Licensed & Insured",
+          "description": "Performed by licensed specialists with full liability and workers' compensation insurance."
+        }
+      ]
+    },
+
+    "process": {
+      "heading": "Our Gas Leak Detection Process",
+      "intro": "Methodical, safety-first inspections with clear documentation.",
+      "steps": [
+        {
+          "title": "1. Safety Check & Triage",
+          "description": "We verify the situation is safe to inspect. For active strong odors, we ask you to evacuate and call your gas utility first."
+        },
+        {
+          "title": "2. Survey the System",
+          "description": "Calibrated detectors sweep all visible gas lines, valves, regulators, and appliances inside and outside the structure."
+        },
+        {
+          "title": "3. Pressure Decay Test",
+          "description": "If a leak is suspected but not yet located, we isolate sections of the system and pressure test to narrow the source."
+        },
+        {
+          "title": "4. Pinpoint & Report",
+          "description": "Once the leak is located, we mark it and provide a written report you can hand to your plumber or gas utility for repair."
+        }
+      ]
+    },
+
+    "faqs": {
+      "heading": "Gas Leak Detection FAQs",
+      "items": [
+        {
+          "question": "What do I do if I smell gas right now?",
+          "answer": "Leave the building immediately without using switches, phones, or anything that could spark. Once outside and safe, call your gas utility's emergency line. Then call us to schedule a thorough detection inspection."
+        },
+        {
+          "question": "Can you find gas leaks in buried yard lines?",
+          "answer": "Yes. We use tracer gas and surface detectors to locate buried natural gas and propane line leaks so excavation is targeted to the actual leak."
+        },
+        {
+          "question": "Will you fix the leak?",
+          "answer": "Our specialty is detection and documentation. Repairs to gas lines must be done by a licensed plumber or your utility; our written report makes that repair faster and more accurate."
+        },
+        {
+          "question": "How soon can you come?",
+          "answer": "For confirmed gas odors, your gas utility's emergency response should always come first. We can typically schedule follow-up detection inspections same-day or next-day."
+        }
+      ]
+    },
+
+    "contacts": {
+      "heading": "Request a Gas Leak Inspection",
+      "items": [
+        {
+          "type": "phone",
+          "label": "Phone",
+          "value": "(404) 555-0199",
+          "href": "tel:+14045550199"
+        },
+        {
+          "type": "email",
+          "label": "Email",
+          "value": "info@atlantaleakdetectionpros.com",
+          "href": "mailto:info@atlantaleakdetectionpros.com"
+        },
+        {
+          "type": "address",
+          "label": "Service Area",
+          "value": "Atlanta, GA & Surrounding Metro"
+        }
+      ]
+    }
+  },
+
+  "footer": {
+    "siteFooter": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Leak Detection Experts",
+        "href": "/"
+      },
+      "tagline": "Professional leak detection services for residential and commercial properties throughout Atlanta, GA.",
+      "social": [
+        { "label": "Facebook", "href": "https://facebook.com", "bgClass": "bg-blue-600" },
+        { "label": "Instagram", "href": "https://instagram.com", "bgClass": "bg-pink-600" },
+        { "label": "LinkedIn", "href": "https://linkedin.com", "bgClass": "bg-blue-700" }
+      ],
+      "servicesLinks": [
+        { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+        { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+        { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+        { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+      ],
+      "legalLinks": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "/about/" },
+        { "label": "Privacy Policy", "href": "/privacy-policy" },
+        { "label": "Terms & Conditions", "href": "/terms-and-conditions" }
+      ],
+      "contact": {
+        "phone": "(404) 555-0199",
+        "addressLines": ["Atlanta, GA", "Serving Metro Atlanta"],
+        "email": "info@atlantaleakdetectionpros.com"
+      },
+      "disclosure": {
+        "heading": "Service Disclaimer",
+        "body": "This website is a locally operated leak detection service provider serving Atlanta, GA and surrounding areas. Service availability may vary by location."
+      }
+    }
+  }
+}

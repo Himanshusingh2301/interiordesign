@@ -1,0 +1,121 @@
+---
+export interface Props {
+  heading?: string;
+  intro?: string;
+  steps?: Array<{
+    title: string;
+    description: string;
+  }>;
+  images?: Array<{
+    src: string;
+    alt: string;
+  }>;
+  reverse?: boolean;
+}
+
+const DEFAULT_STEPS: NonNullable<Props["steps"]> = [
+  {
+    title: "Design Consultation",
+    description:
+      "We meet with you to walk the property and hear your ideas. Our partners look at the Landfall or Historic District style of your home.",
+  },
+  {
+    title: "Custom Proposal",
+    description:
+      "You get a clear plan that shows exactly where lights will go. We explain the costs and the materials we will use upfront.",
+  },
+  {
+    title: "Professional Installation",
+    description:
+      "Our expert partners install the wires and fixtures with care for your lawn. We bury lines deep so they don\u2019t get cut by lawnmowers.",
+  },
+  {
+    title: "Nighttime Adjustment",
+    description:
+      "We come back after dark to aim every light perfectly. This ensures the shadows and highlights fall exactly where they should.",
+  },
+];
+
+const DEFAULT_IMAGES: NonNullable<Props["images"]> = [
+  {
+    src: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80",
+    alt: "Lighting designer consulting with homeowners on the property",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=800&q=80",
+    alt: "Custom outdoor lighting design plan on a tablet",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+    alt: "Technicians installing outdoor lighting fixtures in a garden",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=800&q=80",
+    alt: "Installer adjusting an outdoor light fixture at night",
+  },
+];
+
+const {
+  heading = "Our Outdoor Lighting Installation Process",
+  intro = "Our partners make getting new lights easy and stress-free for you. We follow a simple step-by-step plan to ensure you love the result.",
+  steps = DEFAULT_STEPS,
+  images = DEFAULT_IMAGES,
+  reverse = false,
+} = Astro.props;
+---
+
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="mx-auto mb-12 max-w-3xl text-center">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900"
+      >
+        {heading}
+      </h2>
+      {
+        intro && (
+          <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
+            {intro}
+          </p>
+        )
+      }
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <ol
+        class={`space-y-8 list-none ${reverse ? "lg:order-2" : ""}`}
+        aria-label="Installation process steps"
+      >
+        {
+          steps.map((step) => (
+            <li>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900">
+                {step.title}
+              </h3>
+              <p class="mt-2 text-base leading-relaxed text-slate-600">
+                {step.description}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div
+        class={`grid grid-cols-2 gap-3 ${reverse ? "lg:order-1" : ""}`}
+        aria-hidden={images.length === 0 ? "true" : undefined}
+      >
+        {
+          images.slice(0, 4).map((img) => (
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full rounded-md object-cover aspect-[4/3] shadow-sm"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

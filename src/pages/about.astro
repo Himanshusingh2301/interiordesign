@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Navbar from "../sections/Navbar.astro";
+import Hero from "../sections/Hero.astro";
+import IntroSplit from "../sections/IntroSplit.astro";
+import FeatureGrid from "../sections/FeatureGrid.astro";
+import AboutWithForm from "../sections/AboutWithForm.astro";
+import ServicesGridLinked from "../sections/ServicesGridLinked.astro";
+import ComparisonTable from "../sections/ComparisonTable.astro";
+import CtaBanner from "../sections/CtaBanner.astro";
+import BenefitsList from "../sections/BenefitsList.astro";
+import ProcessSteps from "../sections/ProcessSteps.astro";
+import FaqAccordion from "../sections/FaqAccordion.astro";
+import ContactCards from "../sections/ContactCards.astro";
+import SiteFooter from "../sections/SiteFooter.astro";
+
+import { aboutPageSchema } from "../content/schemas";
+import aboutData from "../content/pages/about.json";
+
+// Each section renders ONLY when its slot is present in about.json.
+// Add a slot to show the section, remove it to hide it.
+const page = aboutPageSchema.parse(aboutData);
+const { header, content, footer } = page;
+---
+
+<Layout
+  title={page.meta.title}
+  description={page.meta.description}
+  canonical={page.meta.canonical}
+  ogImage={page.meta.ogImage}
+  noindex={page.meta.noindex}
+  lang={page.meta.lang}
+>
+  {header.navbar && <Navbar {...header.navbar} />}
+
+  <main>
+    {
+      content.hero && (
+        <div class="hero-center">
+          <Hero {...content.hero} />
+        </div>
+      )
+    }
+    {content.intro && <IntroSplit {...content.intro} />}
+    {content.whyChooseUs && <FeatureGrid {...content.whyChooseUs} />}
+    {content.about && <AboutWithForm {...content.about} />}
+    {content.services && <ServicesGridLinked {...content.services} />}
+    {content.proVsDiy && <ComparisonTable {...content.proVsDiy} />}
+    {content.midCta && <CtaBanner {...content.midCta} />}
+    {content.benefits && <BenefitsList {...content.benefits} />}
+    {content.process && <ProcessSteps {...content.process} />}
+    {content.faqs && <FaqAccordion {...content.faqs} />}
+    {content.contacts && <ContactCards {...content.contacts} />}
+  </main>
+
+  {footer.siteFooter && <SiteFooter {...footer.siteFooter} />}
+</Layout>
+
+<style>
+  /* About-page-only override: center the existing Hero section's content. */
+  .hero-center :global(section > div.relative > .max-w-2xl) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+</style>

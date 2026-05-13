@@ -1,0 +1,126 @@
+---
+export interface Props {
+  heading?: string;
+  paragraphs?: string[];
+  image?: {
+    src: string;
+    alt: string;
+  };
+  reverse?: boolean;
+}
+
+const {
+  heading = "Outdoor Lighting in Wilmington, NC",
+  paragraphs = [
+    "Our Outdoor lighting Wilmington, NC service helps your home look amazing while keeping your family safe at night.",
+    "We use special designs that handle the salty air near the Cape Fear River and the coast.",
+    "Our local certified partners know that living in Wilmington means dealing with humidity and storms.",
+    "We install strong marine-grade brass fixtures that won’t rust or break down in the weather.",
+  ],
+  image = {
+    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern home exterior with warm outdoor lighting at dusk",
+  },
+  reverse = false,
+} = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-[#fcfcfb] py-20 lg:py-28">
+  <!-- Background Elements -->
+  <div class="absolute inset-0">
+    <div class="absolute left-0 top-0 h-72 w-72 rounded-full bg-[#E89938]/5 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-amber-100/30 blur-3xl"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div
+      class={`grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20 ${
+        reverse ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
+      }`}
+    >
+      <!-- Content -->
+      <div class="relative">
+        <!-- Accent -->
+        <div class="mb-6 flex items-center gap-3">
+          <span class="h-px w-14 bg-gradient-to-r from-[#E89938] to-transparent"></span>
+          <span class="h-2 w-2 rounded-full bg-[#E89938]"></span>
+        </div>
+
+        <h2
+          class="max-w-xl text-3xl font-black leading-tight tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
+        >
+          {heading}
+        </h2>
+
+        <div
+          class="mt-8 space-y-6 text-[1.05rem] leading-relaxed text-gray-600"
+        >
+          {paragraphs.map((p) => (
+            <div class="group flex items-start gap-4">
+              <div class="mt-2 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#E89938]/20 bg-[#fff7ec] transition-all duration-300 group-hover:scale-110 group-hover:border-[#E89938]/40">
+                <div class="h-2 w-2 rounded-full bg-[#E89938]"></div>
+              </div>
+
+              <p class="max-w-xl">{p}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="relative">
+        <!-- Decorative Shapes -->
+        <div class="absolute -left-6 -top-6 h-24 w-24 rounded-3xl border border-[#E89938]/10 bg-[#fff7ec] backdrop-blur-sm"></div>
+
+        <div class="absolute -bottom-6 -right-6 h-32 w-32 rounded-full border border-amber-100 bg-gradient-to-br from-[#fff8ef] to-white"></div>
+
+        <!-- Main Card -->
+        <div class="group relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/70 p-3 shadow-[0_20px_70px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+          <!-- Glow -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[#E89938]/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+          <!-- Image -->
+          <div class="overflow-hidden rounded-[1.5rem]">
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+              decoding="async"
+              class="aspect-[4/3] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+
+          <!-- Floating Badge -->
+          <div class="absolute bottom-8 left-8 rounded-2xl border border-white/50 bg-white/85 px-5 py-4 shadow-lg backdrop-blur-md">
+            <div class="flex items-center gap-3">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#E89938] to-[#d98730] shadow-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v18m9-9H3"
+                  />
+                </svg>
+              </div>
+
+              <div class="space-y-1">
+                <div class="h-2.5 w-20 rounded-full bg-gray-300"></div>
+                <div class="h-2 w-14 rounded-full bg-gray-200"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outer Glow -->
+        <div class="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-r from-[#E89938]/10 via-transparent to-amber-100/20 blur-2xl"></div>
+      </div>
+    </div>
+  </div>
+</section>

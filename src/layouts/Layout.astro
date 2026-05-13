@@ -1,0 +1,75 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  /** Page title — drives <title> and og:title */
+  title: string;
+  /** Meta description — drives <meta description> and og:description */
+  description: string;
+  /** Override canonical URL (defaults to current page URL) */
+  canonical?: string;
+  /** OG image path (relative to site root or absolute URL) */
+  ogImage?: string;
+  /** OG content type */
+  ogType?: "website" | "article";
+  /** Disable indexing for staging or private pages */
+  noindex?: boolean;
+  /** HTML lang attribute */
+  lang?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  ogType = "website",
+  noindex = false,
+  lang = "en",
+} = Astro.props;
+
+const siteOrigin = Astro.site ?? new URL("http://localhost:4321");
+const canonicalUrl =
+  canonical ?? new URL(Astro.url.pathname, siteOrigin).toString();
+const ogImageUrl = ogImage
+  ? new URL(ogImage, siteOrigin).toString()
+  : undefined;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body class="antialiased">
+    <slot />
+  </body>
+</html>

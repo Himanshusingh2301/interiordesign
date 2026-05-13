@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "title": "About Us | Atlanta Leak Detection Pros",
+    "description": "Atlanta's trusted leak detection team — non-invasive water, slab, gas, and pool leak detection backed by experienced specialists and modern equipment.",
+    "canonical": "https://www.atlantaleakdetectionpros.com/about/",
+    "ogImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+    "lang": "en"
+  },
+"header": {
+    "navbar": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Fast & Accurate Leak Detection",
+        "href": "/"
+      },
+      "navItems": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Services",
+          "href": "#services",
+          "children": [
+            {
+              "label": "Water Leak Detection",
+              "href": "/water-leak-detection"
+            },
+            {
+              "label": "Slab Leak Detection",
+              "href": "/slab-leak-detection"
+            },
+            {
+              "label": "Gas Leak Detection",
+              "href": "/gas-leak-detection"
+            },
+            {
+              "label": "Pool Leak Detection",
+              "href": "/pool-leak-detection"
+            }
+          ]
+        },
+        {
+          "label": "About",
+          "href": "/about/"
+        },
+        {
+          "label": "FAQs",
+          "href": "#faqs"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ],
+      "cta": {
+        "label": "Call Now",
+        "href": "tel:+14045550199"
+      }
+    }
+  },
+  "content": {
+    "hero": {
+      "heading": "About Atlanta Leak Detection Pros",
+      "cta": {
+        "label": "Call (404) 555-0199",
+        "href": "tel:+14045550199"
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80",
+        "alt": "Leak detection specialist using diagnostic equipment in an Atlanta home"
+      }
+    },
+
+    "about": {
+      "heading": "Who We Are",
+      "paragraphs": [
+        "Atlanta Leak Detection Pros is a team of experienced specialists focused on finding hidden leaks before they cause expensive damage. We serve homeowners, property managers, and businesses across the Atlanta metro area.",
+        "We use non-invasive diagnostic technology — acoustic listening devices, thermal imaging, and pressure testing — to pinpoint water, slab, gas, and pool leaks without tearing up your property.",
+        "Every job is handled with clear communication, transparent pricing, and respect for your time. We show up when we say we will, and we explain what we find in plain language.",
+        "From slab leaks under concrete foundations to underground water lines and swimming pool leaks, our specialists are licensed, insured, and ready to help."
+      ],
+      "cta": {
+        "label": "Call (404) 555-0199",
+        "href": "tel:+14045550199"
+      },
+      "form": {
+        "action": "#",
+        "method": "POST",
+        "submitLabel": "Request a Leak Inspection",
+        "services": [
+          "Water Leak Detection",
+          "Slab Leak Detection",
+          "Gas Leak Detection",
+          "Pool Leak Detection",
+          "Underground Pipe Leak Detection",
+          "Commercial Leak Detection"
+        ]
+      }
+    },
+
+    "contacts": {
+      "heading": "Talk to Our Leak Detection Team",
+      "items": [
+        {
+          "type": "phone",
+          "label": "Call Us",
+          "value": "(404) 555-0199"
+        },
+        {
+          "type": "address",
+          "label": "Service Area",
+          "value": "Atlanta, GA and surrounding metro area"
+        },
+        {
+          "type": "email",
+          "label": "Email Us",
+          "value": "contact@atlantaleakdetectionpros.com"
+        }
+      ]
+    }
+  },
+
+  "footer": {
+    "siteFooter": {
+      "logo": {
+        "primary": "ATLANTA LEAK",
+        "secondary": "DETECTION PROS",
+        "href": "/"
+      },
+      "tagline": "Atlanta's trusted leak detection specialists. Non-invasive technology, fast response, and accurate diagnostics for homes and businesses.",
+      "servicesLinks": [
+        { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+        { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+        { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+        { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+      ],
+      "legalLinks": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "/about/" },
+        { "label": "Contact", "href": "#contact" },
+        { "label": "Privacy Policy", "href": "#" },
+        { "label": "Terms and Conditions", "href": "#" }
+      ],
+      "contact": {
+        "phone": "(404) 555-0199",
+        "addressLines": ["Atlanta, GA"],
+        "email": "contact@atlantaleakdetectionpros.com"
+      },
+      "disclosure": {
+        "heading": "Service Disclosure",
+        "body": "Atlanta Leak Detection Pros connects property owners with licensed leak detection specialists in the Atlanta metro area. Always verify licensing and insurance before scheduling work."
+      }
+    }
+  }
+}

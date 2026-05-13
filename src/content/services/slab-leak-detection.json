@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "title": "Slab Leak Detection Atlanta, GA | Pinpoint Foundation Leaks",
+    "description": "Expert slab leak detection in Atlanta. We locate leaks under concrete foundations using acoustic and thermal imaging — no unnecessary jackhammering, no guesswork.",
+    "canonical": "https://www.atlantaleakdetectionpros.com/slab-leak-detection/",
+    "ogImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+    "lang": "en"
+  },
+
+  "header": {
+    "navbar": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Fast & Accurate Leak Detection",
+        "href": "/"
+      },
+      "navItems": [
+        { "label": "Home", "href": "/" },
+        {
+          "label": "Services",
+          "href": "#services",
+          "children": [
+            { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+            { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+            { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+            { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+          ]
+        },
+        { "label": "About", "href": "/about/" },
+        { "label": "FAQs", "href": "#faqs" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "cta": {
+        "label": "Call Now",
+        "href": "tel:+14045550199"
+      }
+    }
+  },
+
+  "content": {
+    "hero": {
+      "heading": "Slab Leak Detection in Atlanta, GA",
+      "cta": {
+        "label": "Schedule a Slab Leak Inspection",
+        "href": "#contact"
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1920&q=80",
+        "alt": "Specialist using equipment to detect a slab leak under a concrete floor"
+      }
+    },
+
+    "intro": {
+      "heading": "Find Slab Leaks Before They Damage Your Foundation",
+      "paragraphs": [
+        "Slab leaks happen when pressurized water or drain lines under your concrete foundation start to leak. Left unchecked, they cause warped floors, cracked tile, musty odors, and serious structural damage. Our Atlanta specialists locate slab leaks precisely so the repair stays small and predictable.",
+        "We combine electronic amplification, thermal imaging, and pressure isolation to pinpoint the exact leak under the slab. You get an accurate location marked on the floor and a written report your plumber can act on the same day."
+      ],
+      "image": {
+        "src": "https://images.unsplash.com/photo-1581578017428-d2c19b62122d?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Technician marking a slab leak location on a concrete floor"
+      }
+    },
+
+    "benefits": {
+      "heading": "Why Choose Our Slab Leak Detection",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Precise Location",
+          "description": "We mark the leak within inches on the slab so the repair opens only the smallest area of concrete needed."
+        },
+        {
+          "title": "Non-Destructive First",
+          "description": "Acoustic listening, thermal imaging, and line-tracing are used before any concrete is ever touched."
+        },
+        {
+          "title": "Insurance-Ready Reports",
+          "description": "Written findings with location, severity, and recommended scope — useful for your insurance claim and plumber alike."
+        },
+        {
+          "title": "Hot or Cold Side",
+          "description": "We isolate hot and cold water lines so you know exactly which side of the system is leaking before any repair starts."
+        },
+        {
+          "title": "Same-Day Appointments",
+          "description": "Urgent slab leaks across metro Atlanta typically get a same-day or next-day inspection slot."
+        },
+        {
+          "title": "Licensed & Insured",
+          "description": "Performed by licensed leak detection specialists carrying full liability and workers' compensation insurance."
+        }
+      ]
+    },
+
+    "process": {
+      "heading": "Our Slab Leak Detection Process",
+      "intro": "Methodical, non-destructive, and built to keep your concrete intact.",
+      "steps": [
+        {
+          "title": "1. Symptom Review",
+          "description": "We confirm the signs: warm spots, hairline cracks in tile, sounds of running water with everything off, or a spinning water meter."
+        },
+        {
+          "title": "2. System Isolation",
+          "description": "Hot and cold water lines are isolated and pressure-tested to confirm the leak is below the slab and identify which side is failing."
+        },
+        {
+          "title": "3. Electronic Pinpointing",
+          "description": "Ground microphones and tracer gas locate the exact leak under the slab — typically within a few inches of the actual break."
+        },
+        {
+          "title": "4. Action Plan",
+          "description": "You receive a marked location plus a written report covering leak type, severity, and the minimum repair scope your plumber needs."
+        }
+      ]
+    },
+
+    "faqs": {
+      "heading": "Slab Leak Detection FAQs",
+      "items": [
+        {
+          "question": "What are the signs of a slab leak?",
+          "answer": "Warm patches on the floor, unexplained spikes in your water bill, the sound of running water when everything is off, cracks in flooring or grout, musty smells, and reduced water pressure are common indicators."
+        },
+        {
+          "question": "Do you break the slab to find the leak?",
+          "answer": "No. Detection is non-destructive. Only the repair, performed later by a plumber, opens up the slab — and only at the spot we marked."
+        },
+        {
+          "question": "Can a slab leak damage my foundation?",
+          "answer": "Yes, over time. Persistent moisture beneath a slab can erode soil support, shift the foundation, and lead to cracks and uneven floors, which is why fast detection matters."
+        },
+        {
+          "question": "How long does an inspection take?",
+          "answer": "Most slab leak inspections take 60–120 minutes depending on the size of the home and accessibility of plumbing shut-offs."
+        }
+      ]
+    },
+
+    "contacts": {
+      "heading": "Schedule Your Slab Leak Inspection",
+      "items": [
+        {
+          "type": "phone",
+          "label": "Phone",
+          "value": "(404) 555-0199",
+          "href": "tel:+14045550199"
+        },
+        {
+          "type": "email",
+          "label": "Email",
+          "value": "info@atlantaleakdetectionpros.com",
+          "href": "mailto:info@atlantaleakdetectionpros.com"
+        },
+        {
+          "type": "address",
+          "label": "Service Area",
+          "value": "Atlanta, GA & Surrounding Metro"
+        }
+      ]
+    }
+  },
+
+  "footer": {
+    "siteFooter": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Leak Detection Experts",
+        "href": "/"
+      },
+      "tagline": "Professional leak detection services for residential and commercial properties throughout Atlanta, GA.",
+      "social": [
+        { "label": "Facebook", "href": "https://facebook.com", "bgClass": "bg-blue-600" },
+        { "label": "Instagram", "href": "https://instagram.com", "bgClass": "bg-pink-600" },
+        { "label": "LinkedIn", "href": "https://linkedin.com", "bgClass": "bg-blue-700" }
+      ],
+      "servicesLinks": [
+        { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+        { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+        { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+        { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+      ],
+      "legalLinks": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "/about/" },
+        { "label": "Privacy Policy", "href": "/privacy-policy" },
+        { "label": "Terms & Conditions", "href": "/terms-and-conditions" }
+      ],
+      "contact": {
+        "phone": "(404) 555-0199",
+        "addressLines": ["Atlanta, GA", "Serving Metro Atlanta"],
+        "email": "info@atlantaleakdetectionpros.com"
+      },
+      "disclosure": {
+        "heading": "Service Disclaimer",
+        "body": "This website is a locally operated leak detection service provider serving Atlanta, GA and surrounding areas. Service availability may vary by location."
+      }
+    }
+  }
+}

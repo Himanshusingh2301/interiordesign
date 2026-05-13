@@ -1,0 +1,170 @@
+---
+export interface Props {
+  heading?: string;
+  paragraphs?: string[];
+  cta?: {
+    label: string;
+    href: string;
+  };
+  form?: {
+    /** Where the form posts to. Use a real endpoint when wiring to a backend. */
+    action?: string;
+    method?: "GET" | "POST";
+    submitLabel?: string;
+    services?: string[];
+  };
+}
+
+const DEFAULT_PARAGRAPHS = [
+  "Outdoor lighting Wilmington company is dedicated to making Wilmington homes shine safely and beautifully.",
+  "We believe in using only the best materials that can handle our coastal weather. Our goal is to give you a yard you are proud to show off.",
+  "We carefully select our outdoor lighting partners who are certified, insured and experienced in handling complex lighting projects. They know the local neighborhoods from Airlie Gardens to the riverfront.",
+  "We focus on customer service and clear communication at every step. You will always know what is happening with your project.",
+];
+
+const DEFAULT_SERVICES = [
+  "Landscape Lighting Design",
+  "Deck and Patio Lighting",
+  "Pathway & Walkway Lighting",
+  "Outdoor Security Lighting",
+  "Architectural & Facade Lighting",
+  "Commercial Lighting",
+  "Holiday/Christmas Lighting",
+  "Repair & Maintenance",
+];
+
+const {
+  heading = "About Our Company",
+  paragraphs = DEFAULT_PARAGRAPHS,
+  cta = {
+    label: "Call (910) 218-9037",
+    href: "tel:+19102189037",
+  },
+  form = {},
+} = Astro.props;
+
+const {
+  action = "#",
+  method = "POST",
+  submitLabel = "Get Your Free Quote!",
+  services = DEFAULT_SERVICES,
+} = form;
+
+const inputClass =
+  "w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition focus:border-[#E89938] focus:outline-none focus:ring-2 focus:ring-[#E89938]/30";
+---
+
+<section id="about" class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="mx-auto mb-12 max-w-3xl text-center">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900"
+      >
+        {heading}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="space-y-5 text-base leading-relaxed text-gray-700 max-w-xl">
+          {paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+
+        <a
+          href={cta.href}
+          class="mt-8 inline-flex items-center gap-2 rounded-md bg-[#E89938] px-6 py-3 text-base font-bold text-white shadow-sm transition-colors hover:bg-[#d98730] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E89938]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="h-4 w-4"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-.43 1.402L5.27 8.962a11.04 11.04 0 0 0 5.768 5.769l1.162-1.13a1.5 1.5 0 0 1 1.402-.43l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-7.18 0-13-5.82-13-13V3.5Z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span>{cta.label}</span>
+        </a>
+      </div>
+
+      <form
+        action={action}
+        method={method}
+        class="space-y-4"
+        aria-label="Quote request"
+      >
+        <div>
+          <label for="quote-name" class="sr-only">Name</label>
+          <input
+            id="quote-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            placeholder="Name"
+            class={inputClass}
+          />
+        </div>
+
+        <div>
+          <label for="quote-mobile" class="sr-only">Mobile Number</label>
+          <input
+            id="quote-mobile"
+            name="mobile"
+            type="tel"
+            autocomplete="tel"
+            required
+            placeholder="Mobile Number"
+            class={inputClass}
+          />
+        </div>
+
+        <div>
+          <label for="quote-email" class="sr-only">Email</label>
+          <input
+            id="quote-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="Email"
+            class={inputClass}
+          />
+        </div>
+
+        <div>
+          <label for="quote-service" class="sr-only">Service Needed</label>
+          <select
+            id="quote-service"
+            name="service"
+            required
+            class={`${inputClass} text-gray-500`}
+          >
+            <option value="" disabled selected>Service Needed</option>
+            {services.map((s) => <option value={s}>{s}</option>)}
+          </select>
+        </div>
+
+        <div>
+          <label for="quote-message" class="sr-only">Message</label>
+          <textarea
+            id="quote-message"
+            name="message"
+            rows="4"
+            placeholder="Message"
+            class={`${inputClass} resize-y`}></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center rounded-md bg-[#E89938] px-6 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-[#d98730] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E89938]"
+        >
+          {submitLabel}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

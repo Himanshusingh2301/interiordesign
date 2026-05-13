@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "title": "Water Leak Detection Atlanta, GA | Fast & Non-Invasive",
+    "description": "Professional water leak detection in Atlanta — non-invasive acoustic and thermal imaging technology locates hidden water leaks fast, without damaging your home.",
+    "canonical": "https://www.atlantaleakdetectionpros.com/water-leak-detection/",
+    "ogImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+    "lang": "en"
+  },
+
+  "header": {
+    "navbar": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Fast & Accurate Leak Detection",
+        "href": "/"
+      },
+      "navItems": [
+        { "label": "Home", "href": "/" },
+        {
+          "label": "Services",
+          "href": "#services",
+          "children": [
+            { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+            { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+            { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+            { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+          ]
+        },
+        { "label": "About", "href": "/about/" },
+        { "label": "FAQs", "href": "#faqs" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "cta": {
+        "label": "Call Now",
+        "href": "tel:+14045550199"
+      }
+    }
+  },
+
+  "content": {
+    "hero": {
+      "heading": "Water Leak Detection in Atlanta, GA",
+      "cta": {
+        "label": "Schedule a Leak Inspection",
+        "href": "#contact"
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80",
+        "alt": "Plumber using acoustic equipment to detect water leak in an Atlanta home"
+      }
+    },
+
+    "intro": {
+      "heading": "Find Hidden Water Leaks Before They Cause Damage",
+      "paragraphs": [
+        "A small water leak can quietly drive up your bill and rot framing, drywall, and flooring long before you see a wet spot. Our Atlanta specialists use non-invasive acoustic listening, thermal imaging, and pressure testing to locate leaks in supply lines, drains, and concealed plumbing without unnecessary demolition.",
+        "Once we pinpoint the source, you get a clear report with the leak location, severity, and recommended repair scope so you can move quickly with your plumber or restoration contractor."
+      ],
+      "image": {
+        "src": "https://images.unsplash.com/photo-1581578017428-d2c19b62122d?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Thermal imaging camera locating hidden water leak behind a wall"
+      }
+    },
+
+    "benefits": {
+      "heading": "Why Choose Our Water Leak Detection Service",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Non-Invasive Diagnostics",
+          "description": "Acoustic listening, thermal imaging, and tracer gas tools find leaks without ripping out walls, floors, or landscaping."
+        },
+        {
+          "title": "Fast Response",
+          "description": "Same-day and next-day appointments across the Atlanta metro for urgent leaks affecting water bills or property damage."
+        },
+        {
+          "title": "Clear Findings Report",
+          "description": "Every inspection ends with a written report: exact leak location, type, and the repair scope your plumber needs."
+        },
+        {
+          "title": "Residential & Commercial",
+          "description": "From single-family homes to multi-tenant buildings and restaurants, our team handles supply, drain, and underground line leaks."
+        },
+        {
+          "title": "Licensed & Insured",
+          "description": "All work is performed by licensed leak detection specialists carrying full liability and workers' compensation insurance."
+        },
+        {
+          "title": "Save On Water Bills",
+          "description": "Catching a hidden leak early stops thousands of gallons per month of waste and prevents structural and mold damage downstream."
+        }
+      ]
+    },
+
+    "process": {
+      "heading": "Our Water Leak Detection Process",
+      "intro": "A simple, transparent process that locates leaks fast and leaves your property intact.",
+      "steps": [
+        {
+          "title": "1. Call or Book Online",
+          "description": "Tell us what you are seeing — high bills, damp spots, low pressure, or a meter that will not stop — and we schedule an inspection that fits your day."
+        },
+        {
+          "title": "2. On-Site Inspection",
+          "description": "A specialist arrives with acoustic, thermal, and pressure-testing equipment and isolates the affected system before locating the leak."
+        },
+        {
+          "title": "3. Pinpoint the Leak",
+          "description": "We mark the exact leak location on the wall, floor, slab, or yard so any repair only opens up the minimum needed area."
+        },
+        {
+          "title": "4. Written Report",
+          "description": "You receive a clear findings report you can hand to your plumber, insurance adjuster, or property manager to move into repair quickly."
+        }
+      ]
+    },
+
+    "faqs": {
+      "heading": "Water Leak Detection FAQs",
+      "items": [
+        {
+          "question": "How do I know I have a hidden water leak?",
+          "answer": "Common signs include an unexplained jump in your water bill, the water meter moving with all fixtures off, damp spots on walls or ceilings, warm areas on a slab floor, low water pressure, or the sound of running water when nothing is on."
+        },
+        {
+          "question": "Will you damage my walls or floors to find the leak?",
+          "answer": "No. We use non-invasive tools first — acoustic listening, thermal imaging, and pressure testing — so most inspections require no demolition. If a small access opening is ever needed, you approve it before we proceed."
+        },
+        {
+          "question": "Do you repair the leak as well?",
+          "answer": "Our specialty is finding leaks. We deliver a written report so you or your plumber can perform the repair quickly and accurately, often with a much smaller repair footprint than guesswork allows."
+        },
+        {
+          "question": "How fast can you come out?",
+          "answer": "Same-day and next-day appointments are usually available across the Atlanta metro. Call (404) 555-0199 to confirm the earliest open slot for your address."
+        }
+      ]
+    },
+
+    "contacts": {
+      "heading": "Schedule Your Water Leak Inspection",
+      "items": [
+        {
+          "type": "phone",
+          "label": "Phone",
+          "value": "(404) 555-0199",
+          "href": "tel:+14045550199"
+        },
+        {
+          "type": "email",
+          "label": "Email",
+          "value": "info@atlantaleakdetectionpros.com",
+          "href": "mailto:info@atlantaleakdetectionpros.com"
+        },
+        {
+          "type": "address",
+          "label": "Service Area",
+          "value": "Atlanta, GA & Surrounding Metro"
+        }
+      ]
+    }
+  },
+
+  "footer": {
+    "siteFooter": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Leak Detection Experts",
+        "href": "/"
+      },
+      "tagline": "Professional leak detection services for residential and commercial properties throughout Atlanta, GA.",
+      "social": [
+        { "label": "Facebook", "href": "https://facebook.com", "bgClass": "bg-blue-600" },
+        { "label": "Instagram", "href": "https://instagram.com", "bgClass": "bg-pink-600" },
+        { "label": "LinkedIn", "href": "https://linkedin.com", "bgClass": "bg-blue-700" }
+      ],
+      "servicesLinks": [
+        { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+        { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+        { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+        { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+      ],
+      "legalLinks": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "/about/" },
+        { "label": "Privacy Policy", "href": "/privacy-policy" },
+        { "label": "Terms & Conditions", "href": "/terms-and-conditions" }
+      ],
+      "contact": {
+        "phone": "(404) 555-0199",
+        "addressLines": ["Atlanta, GA", "Serving Metro Atlanta"],
+        "email": "info@atlantaleakdetectionpros.com"
+      },
+      "disclosure": {
+        "heading": "Service Disclaimer",
+        "body": "This website is a locally operated leak detection service provider serving Atlanta, GA and surrounding areas. Service availability may vary by location."
+      }
+    }
+  }
+}

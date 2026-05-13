@@ -1,0 +1,198 @@
+---
+export interface Props {
+  heading?: string;
+  items?: Array<{
+    title: string;
+    href?: string;
+    paragraphs: string[];
+    image: { src: string; alt: string };
+    bullets?: Array<{ label: string; description: string }>;
+  }>;
+}
+
+const slugify = (title: string) =>
+  `/services/${title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")}`;
+
+const DEFAULT_ITEMS: NonNullable<Props["items"]> = [
+  {
+    title: "Landscape Lighting",
+    href: "/services/landscape-lighting",
+    image: {
+      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      alt: "Landscape lighting illuminating trees and a pathway around a home at dusk",
+    },
+    paragraphs: [
+      "We turn your dark yard into a beautiful escape that highlights your favorite trees and gardens. Our partners use smart techniques to create depth and warmth around your property.",
+    ],
+    bullets: [
+      {
+        label: "Moonlighting",
+        description:
+          "We place lights high in trees to mimic the natural glow of a full moon. This creates soft shadows on your lawn that look very natural and gentle.",
+      },
+      {
+        label: "Uplighting",
+        description:
+          "Our partners place fixtures at the base of trees to shine light upward. This makes the texture of the bark stand out and adds drama to your yard.",
+      },
+      {
+        label: "Silhouetting",
+        description:
+          "We place a light behind a bush or tree to create a dark shape against a wall. This technique shows off the unique form of your plants without harsh glare.",
+      },
+      {
+        label: "Garden Bed Lighting",
+        description:
+          "Small lights are hidden in your flower beds to show off colors at night. This keeps your garden looking vibrant even after the sun goes down.",
+      },
+    ],
+  },
+  {
+    title: "Deck and Patio Lighting",
+    href: "/services/deck-and-patio-lighting",
+    image: {
+      src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+      alt: "Wooden deck lit by string lights and ambient outdoor lighting",
+    },
+    paragraphs: [
+      "Your deck is the perfect place for relaxing, but it needs the right light for safety. We install subtle fixtures that let you enjoy the cool evening breeze without bright glares.",
+      "Our partners use recessed lights that fit right into the steps and posts. This prevents trips and falls while adding a warm glow to the wood or stone. It creates the perfect mood for hosting dinner parties outside.",
+    ],
+  },
+  {
+    title: "Pathway & Walkway Lighting",
+    href: "/services/pathway-and-walkway-lighting",
+    image: {
+      src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
+      alt: "Brick walkway illuminated with low pathway lights leading to a home",
+    },
+    paragraphs: [
+      "Walking to your front door shouldn\u2019t be a guessing game in the dark. We use Path Illumination to guide your guests safely from the driveway to the porch.",
+      "These lights are low to the ground and point down to stop light pollution. They highlight the texture of your walkway while keeping the light out of your eyes. It creates a welcoming entrance for everyone who visits.",
+    ],
+  },
+  {
+    title: "Architectural & Facade Lighting",
+    href: "/services/architectural-and-facade-lighting",
+    image: {
+      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      alt: "Home facade highlighted with architectural uplighting",
+    },
+    paragraphs: [
+      "You can make your home look bigger and more elegant by lighting up the walls and columns. We use Architectural Grazing to capture the texture of brick, stone, or siding.",
+      "This increases your curb appeal and makes your house the best-looking one on the block. Our partners position every light carefully to avoid shining into windows.",
+    ],
+  },
+  {
+    title: "Outdoor Security Lighting",
+    href: "/services/outdoor-security-lighting",
+    image: {
+      src: "https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=1200&q=80",
+      alt: "Bright outdoor security lighting around a home driveway at night",
+    },
+    paragraphs: [
+      "A well-lit home is a much harder target for intruders than a dark one. We place bright lights in shadowy corners where people might try to hide. This keeps your family safe and gives you peace of mind at night.",
+      "We can also install motion sensors that turn on when someone walks by. This surprises unwanted visitors and alerts you to movement outside.",
+    ],
+  },
+  {
+    title: "Commercial Outdoor Lighting",
+    href: "/services/commercial-outdoor-lighting",
+    image: {
+      src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1200&q=80",
+      alt: "Restaurant patio lit with warm outdoor lighting and string lights",
+    },
+    paragraphs: [
+      "Businesses need good lighting to keep customers safe and attract new attention. We help restaurants and shops create an inviting atmosphere that brings people in.",
+      "Our professional partners design systems that lower liability risks in parking lots and walkways. We use energy-efficient bulbs to keep your operating costs low. A bright business looks open, safe, and professional to everyone passing by.",
+    ],
+  },
+];
+
+const {
+  heading = "Outdoor Lighting Wilmington Services",
+  items = DEFAULT_ITEMS,
+} = Astro.props;
+---
+
+<section id="services" class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="mx-auto mb-12 max-w-3xl text-center">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900"
+      >
+        {heading}
+      </h2>
+      <div
+        class="mx-auto mt-4 h-[2px] w-20 bg-gray-300"
+        aria-hidden="true"
+      >
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-14 lg:gap-x-12">
+      {
+        items.map((item) => {
+          const href = item.href ?? slugify(item.title);
+
+          return (
+            <article>
+              <img
+                src={item.image.src}
+                alt={item.image.alt}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-auto rounded-lg shadow-md object-cover aspect-[4/3]"
+              />
+
+              <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-blue-700">
+                <a
+                  href={href}
+                  class="transition-colors hover:text-blue-900 hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+                >
+                  {item.title}
+                </a>
+              </h3>
+
+              <div class="mt-4 space-y-4 text-base leading-relaxed text-gray-700">
+                {item.paragraphs.map((p) => <p>{p}</p>)}
+              </div>
+
+              {item.bullets && item.bullets.length > 0 && (
+                <ul class="mt-5 space-y-3 pl-1">
+                  {item.bullets.map((b) => (
+                    <li class="flex gap-3 text-sm leading-relaxed text-gray-700">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        class="mt-1 h-4 w-4 flex-none text-gray-400"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 0 1 .02-1.06L11.168 10 7.23 6.29a.75.75 0 1 1 1.04-1.08l4.5 4.25a.75.75 0 0 1 0 1.08l-4.5 4.25a.75.75 0 0 1-1.06-.02Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      <span>
+                        <strong class="font-semibold text-gray-900">
+                          {b.label}
+                        </strong>
+                        : {b.description}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

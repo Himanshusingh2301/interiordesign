@@ -1,0 +1,117 @@
+---
+export interface Props {
+  heading?: string;
+  intro?: string;
+  columns?: [string, string, string];
+  rows?: Array<[string, string, string]>;
+  /** Optional: highlight one of the comparison columns (1 = middle, 2 = right) */
+  highlightColumn?: 1 | 2;
+}
+
+const DEFAULT_COLUMNS: [string, string, string] = [
+  "Feature",
+  "DIY Store Kits",
+  "Our Professional Service",
+];
+
+const DEFAULT_ROWS: Array<[string, string, string]> = [
+  ["Material Quality", "Plastic or Thin Aluminum", "Marine-Grade Brass & Copper"],
+  ["Waterproofing", "Basic Rain Resistance", "IP68 Rated (Submersible)"],
+  ["Connections", "Clip-on Connectors (Corrode fast)", "Watertight Heat-Shrink Seals"],
+  ["Warranty", "1 Year or Less", "Lifetime Warranty on Fixtures"],
+  ["Brightness", "Dims over distance", "Consistent voltage everywhere"],
+  ["Design", "Basic placement", "Expert Architectural Design"],
+  ["Durability", "Breaks in 1-2 years", "Built to last 15+ years"],
+];
+
+const {
+  heading = "Professional Vs DIY Outdoor Lighting",
+  intro = "Many people try to install outdoor lights themselves, but store-bought kits often fail quickly in our climate. Here is why hiring a professional is a better choice for your home.",
+  columns = DEFAULT_COLUMNS,
+  rows = DEFAULT_ROWS,
+  highlightColumn,
+} = Astro.props;
+
+const highlightBg = (idx: number, mode: "head" | "body") => {
+  if (highlightColumn !== idx) return "";
+  return mode === "head" ? "bg-amber-50" : "bg-amber-50/40";
+};
+
+const cellBase =
+  "border border-slate-200 px-6 py-5 text-base align-middle text-center";
+const labelCell = `${cellBase} font-bold text-slate-800`;
+const valueCell = `${cellBase} text-slate-600`;
+---
+
+<section class="bg-white">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="mx-auto mb-10 max-w-3xl text-center">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900"
+      >
+        {heading}
+      </h2>
+      {
+        intro && (
+          <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
+            {intro}
+          </p>
+        )
+      }
+    </div>
+
+    <div class="overflow-x-auto rounded-lg">
+      <table class="w-full min-w-[640px] table-fixed border-collapse">
+        <colgroup>
+          <col style="width: 22%" />
+          <col style="width: 39%" />
+          <col style="width: 39%" />
+        </colgroup>
+
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              class={`${labelCell} bg-slate-50 ${highlightBg(0, "head")}`}
+            >
+              {columns[0]}
+            </th>
+            <th
+              scope="col"
+              class={`${labelCell} bg-slate-50 ${highlightBg(1, "head")}`}
+            >
+              {columns[1]}
+            </th>
+            <th
+              scope="col"
+              class={`${labelCell} bg-slate-50 ${highlightBg(2, "head")}`}
+            >
+              {columns[2]}
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {
+            rows.map((row) => (
+              <tr>
+                <th
+                  scope="row"
+                  class={`${labelCell} ${highlightBg(0, "body")}`}
+                >
+                  {row[0]}
+                </th>
+                <td class={`${valueCell} ${highlightBg(1, "body")}`}>
+                  {row[1]}
+                </td>
+                <td class={`${valueCell} ${highlightBg(2, "body")}`}>
+                  {row[2]}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

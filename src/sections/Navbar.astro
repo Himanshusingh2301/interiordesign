@@ -1,0 +1,355 @@
+---
+export interface Props {
+  logo?: {
+    primary?: string;
+    secondary?: string;
+    href?: string;
+  };
+  navItems?: Array<{
+    label: string;
+    href: string;
+    children?: Array<{ label: string; href: string }>;
+  }>;
+  cta?: {
+    label: string;
+    href: string;
+  };
+}
+
+const DEFAULT_NAV: NonNullable<Props["navItems"]> = [
+  {
+    label: "Our Services",
+    href: "#services",
+    children: [
+      { label: "Landscape Lighting", href: "#" },
+      { label: "Deck and Patio Lighting", href: "#" },
+      { label: "Pathway and Walkway Lighting", href: "#" },
+      { label: "Architectural Lighting", href: "#" },
+      { label: "Security Lighting", href: "#" },
+      { label: "Commercial Lighting", href: "#" },
+      { label: "Holiday & Christmas Lighting", href: "#" },
+      { label: "Repair & Maintenance", href: "#" },
+    ],
+  },
+  {
+    label: "Area We Serve",
+    href: "#areas",
+    children: [
+      { label: "Wilmington", href: "#" },
+      { label: "Wrightsville Beach", href: "#" },
+      { label: "Carolina Beach", href: "#" },
+      { label: "Leland", href: "#" },
+      { label: "Southport", href: "#" },
+      { label: "Hampstead", href: "#" },
+    ],
+  },
+  { label: "About", href: "#about" },
+  { label: "Contact Us", href: "#contact" },
+];
+
+const {
+  logo = {
+    primary: "WILMINGTON",
+    secondary: "OUTDOOR LIGHTING",
+    href: "/",
+  },
+  navItems = DEFAULT_NAV,
+  cta = {
+    label: "Call (910) 218-9037",
+    href: "tel:+19102189037",
+  },
+} = Astro.props;
+---
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-white/80 backdrop-blur-xl">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#fffaf3] via-white to-[#fffaf3] opacity-90"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-20 items-center justify-between gap-6">
+      <!-- Logo -->
+      <a
+        href={logo.href ?? "/"}
+        class="group relative flex shrink-0 items-center gap-3"
+        aria-label={`${logo.secondary ?? ""} ${logo.primary ?? "Home"}`.trim()}
+      >
+        <div class="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-[#E89938]/20 bg-gradient-to-br from-[#fff6e8] to-[#fffdf8] shadow-[0_10px_30px_rgba(232,153,56,0.12)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_14px_35px_rgba(232,153,56,0.22)]">
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#E89938]/10 to-transparent"></div>
+
+          <svg
+            viewBox="0 0 40 40"
+            xmlns="http://www.w3.org/2000/svg"
+            class="relative h-10 w-10 shrink-0"
+            aria-hidden="true"
+          >
+            <defs>
+              <radialGradient id="lanternGlow" cx="50%" cy="45%" r="55%">
+                <stop offset="0%" stop-color="#FFE7A8"></stop>
+                <stop offset="55%" stop-color="#F59E0B"></stop>
+                <stop offset="100%" stop-color="#D97706"></stop>
+              </radialGradient>
+            </defs>
+
+            <rect x="14" y="4" width="12" height="3" rx="0.5" fill="#292524"></rect>
+            <rect x="18.5" y="7" width="3" height="2.5" fill="#292524"></rect>
+
+            <path d="M11 11h18v17H11V11z" fill="#292524"></path>
+
+            <rect
+              x="13.5"
+              y="13"
+              width="13"
+              height="13"
+              rx="1"
+              fill="url(#lanternGlow)"
+            ></rect>
+
+            <rect x="12" y="28" width="16" height="2.5" rx="0.5" fill="#292524"></rect>
+
+            <line
+              x1="20"
+              y1="30.5"
+              x2="20"
+              y2="35"
+              stroke="#292524"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            ></line>
+
+            <rect x="16" y="35" width="8" height="2" rx="0.5" fill="#292524"></rect>
+          </svg>
+        </div>
+
+        <span class="flex flex-col leading-none">
+          <span class="text-[10px] font-medium tracking-[0.28em] text-[#E89938] uppercase">
+            {logo.secondary}
+          </span>
+
+          <span class="mt-1 text-xl font-black tracking-[0.08em] text-gray-900 uppercase">
+            {logo.primary}
+          </span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav
+        class="hidden lg:flex lg:items-center"
+        aria-label="Primary navigation"
+      >
+        <ul class="flex items-center gap-2 rounded-full border border-gray-200/80 bg-white/70 p-2 shadow-[0_8px_30px_rgba(0,0,0,0.04)] backdrop-blur">
+          {
+            navItems.map((item) => (
+              <li
+                class={item.children?.length
+                  ? "group/drop relative"
+                  : "relative"}
+              >
+                {item.children && item.children.length > 0 ? (
+                  <>
+                    <a
+                      href={item.href}
+                      class="inline-flex items-center gap-1.5 rounded-full px-5 py-3 text-[15px] font-medium text-gray-700 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]"
+                    >
+                      <span>{item.label}</span>
+
+                      <svg
+                        class="h-3.5 w-3.5 shrink-0 transition-transform duration-200 group-hover/drop:rotate-180"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M2.5 4.25L6 7.75l3.5-3.5"
+                          stroke="currentColor"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+
+                    <!-- Dropdown -->
+                    <div
+                      class="nav-dropdown invisible absolute left-1/2 top-full z-50 w-[19rem] -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover/drop:visible group-hover/drop:translate-y-0 group-hover/drop:opacity-100"
+                      role="region"
+                      aria-label={`${item.label} submenu`}
+                    >
+                      <div class="overflow-hidden rounded-2xl border border-gray-200/80 bg-white/95 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.12)] backdrop-blur-xl">
+                        <ul class="flex flex-col gap-1">
+                          {item.children.map((child) => (
+                            <li>
+                              <a
+                                href={child.href}
+                                class="group/item flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]"
+                              >
+                                <span>{child.label}</span>
+
+                                <svg
+                                  class="h-4 w-4 translate-x-0 opacity-0 transition-all duration-200 group-hover/item:translate-x-1 group-hover/item:opacity-100"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                  stroke-width="2"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <a
+                    href={item.href}
+                    class="inline-flex items-center rounded-full px-5 py-3 text-[15px] font-medium text-gray-700 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]"
+                  >
+                    {item.label}
+                  </a>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <!-- Right Side -->
+      <div class="flex items-center gap-3">
+        <!-- CTA -->
+        <a
+          href={cta.href}
+          class="group hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#E89938] to-[#d98730] px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(232,153,56,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(232,153,56,0.45)]"
+        >
+          <span>{cta.label}</span>
+
+          <svg
+            class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu -->
+        <details class="relative lg:hidden">
+          <summary
+            class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl border border-gray-200 bg-white/80 text-gray-700 shadow-sm backdrop-blur transition-all duration-200 hover:border-[#E89938]/30 hover:bg-[#fff8ef] hover:text-[#E89938]"
+          >
+            <span class="sr-only">Toggle menu</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </summary>
+
+          <div class="absolute right-0 top-full z-50 mt-4 w-[min(100vw-2rem,22rem)] overflow-hidden rounded-3xl border border-gray-200/80 bg-white/95 p-4 shadow-[0_25px_70px_rgba(0,0,0,0.15)] backdrop-blur-xl">
+            <nav aria-label="Mobile navigation">
+              <ul class="flex flex-col gap-2">
+                {
+                  navItems.map((item) => (
+                    <li>
+                      {item.children && item.children.length > 0 ? (
+                        <details class="group/mobile rounded-2xl border border-gray-100 bg-gray-50/60">
+                          <summary class="flex cursor-pointer items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-semibold text-gray-800 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]">
+                            <span>{item.label}</span>
+
+                            <svg
+                              class="h-4 w-4 transition-transform duration-200 group-open/mobile:rotate-180"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M2.5 4.25L6 7.75l3.5-3.5"
+                                stroke="currentColor"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                            </svg>
+                          </summary>
+
+                          <ul class="space-y-1 px-4 pb-4 pt-1">
+                            {item.children.map((child) => (
+                              <li>
+                                <a
+                                  href={child.href}
+                                  class="block rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white hover:text-[#E89938]"
+                                >
+                                  {child.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      ) : (
+                        <a
+                          href={item.href}
+                          class="block rounded-2xl border border-gray-100 bg-gray-50/60 px-4 py-3.5 text-[15px] font-semibold text-gray-800 transition-all duration-200 hover:bg-[#fff4e7] hover:text-[#E89938]"
+                        >
+                          {item.label}
+                        </a>
+                      )}
+                    </li>
+                  ))
+                }
+              </ul>
+            </nav>
+
+            <a
+              href={cta.href}
+              class="mt-4 flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#E89938] to-[#d98730] px-4 py-4 text-center text-sm font-bold text-white shadow-[0_10px_30px_rgba(232,153,56,0.3)] sm:hidden"
+            >
+              {cta.label}
+            </a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  details > summary {
+    list-style: none;
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .nav-dropdown::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1rem;
+  }
+</style>

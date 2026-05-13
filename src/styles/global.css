@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Prevent horizontal scrollbar / page jiggle without affecting vertical scroll
+   or `position: sticky`. SEO-neutral: purely visual. */
+html,
+body {
+  overflow-x: hidden;
+}

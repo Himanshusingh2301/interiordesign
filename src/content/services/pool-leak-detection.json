@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "title": "Pool Leak Detection Atlanta, GA | Find Pool & Plumbing Leaks",
+    "description": "Atlanta pool leak detection experts. We find leaks in pool shells, returns, skimmers, and underground plumbing — no draining, no guesswork.",
+    "canonical": "https://www.atlantaleakdetectionpros.com/pool-leak-detection/",
+    "ogImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+    "lang": "en"
+  },
+
+  "header": {
+    "navbar": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Fast & Accurate Leak Detection",
+        "href": "/"
+      },
+      "navItems": [
+        { "label": "Home", "href": "/" },
+        {
+          "label": "Services",
+          "href": "#services",
+          "children": [
+            { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+            { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+            { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+            { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+          ]
+        },
+        { "label": "About", "href": "/about/" },
+        { "label": "FAQs", "href": "#faqs" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "cta": {
+        "label": "Call Now",
+        "href": "tel:+14045550199"
+      }
+    }
+  },
+
+  "content": {
+    "hero": {
+      "heading": "Pool Leak Detection in Atlanta, GA",
+      "cta": {
+        "label": "Schedule a Pool Leak Inspection",
+        "href": "#contact"
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1920&q=80",
+        "alt": "Specialist inspecting a residential swimming pool for leaks in Atlanta"
+      }
+    },
+
+    "intro": {
+      "heading": "Stop Pool Water Loss & High Bills",
+      "paragraphs": [
+        "A leaking pool wastes thousands of gallons of water, drives chemical costs up, and can wash out soil around plumbing and decking. Our Atlanta specialists locate leaks in pool shells, skimmers, returns, light niches, and underground plumbing — usually without draining the pool.",
+        "We combine dye testing, pressure testing on suction and return lines, and underwater leak listening to pinpoint exactly where the water is going so the repair is targeted, not exploratory."
+      ],
+      "image": {
+        "src": "https://images.unsplash.com/photo-1505842465776-3d90f616310d?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Closeup of skimmer and return jet on a residential pool"
+      }
+    },
+
+    "benefits": {
+      "heading": "Why Choose Our Pool Leak Detection",
+      "columns": 3,
+      "items": [
+        {
+          "title": "No Pool Draining Required",
+          "description": "Most inspections are performed with the pool full using dye, pressure tests, and underwater listening equipment."
+        },
+        {
+          "title": "Plumbing Pressure Testing",
+          "description": "We pressurize and isolate suction, return, and skimmer lines independently to identify exactly which line is leaking."
+        },
+        {
+          "title": "Shell & Fitting Inspection",
+          "description": "Dye testing on cracks, lights, skimmers, returns, and main drains confirms whether the leak is in the structure itself."
+        },
+        {
+          "title": "Underground Line Pinpointing",
+          "description": "When buried lines leak, electronic listening tools locate the break so excavation is minimized."
+        },
+        {
+          "title": "Save Water & Chemicals",
+          "description": "Catching a pool leak early saves on water bills, chemical cost, and erosion damage around the deck and equipment pad."
+        },
+        {
+          "title": "Licensed & Insured",
+          "description": "Performed by licensed leak detection specialists carrying full liability and workers' compensation insurance."
+        }
+      ]
+    },
+
+    "process": {
+      "heading": "Our Pool Leak Detection Process",
+      "intro": "A systematic inspection that confirms the leak source without unnecessary work.",
+      "steps": [
+        {
+          "title": "1. Loss Measurement",
+          "description": "We confirm how fast water is being lost and check whether loss continues with the pump off to narrow the leak type."
+        },
+        {
+          "title": "2. Dye & Visual Test",
+          "description": "Skimmers, returns, lights, main drains, and visible cracks are dye-tested to find leaks in the pool structure or fittings."
+        },
+        {
+          "title": "3. Pressure Test the Plumbing",
+          "description": "Suction, return, and skimmer lines are individually pressurized to identify any underground plumbing leaks."
+        },
+        {
+          "title": "4. Pinpoint & Report",
+          "description": "Any underground line leak is electronically located. You receive a written report with leak location and recommended repair scope."
+        }
+      ]
+    },
+
+    "faqs": {
+      "heading": "Pool Leak Detection FAQs",
+      "items": [
+        {
+          "question": "How do I know if my pool is leaking?",
+          "answer": "Common signs include water loss greater than ¼ inch per day, soggy ground or sinkholes near the pool, unusually high water bills, cracks in tile or grout, air bubbles in the return jets, or the pump losing prime."
+        },
+        {
+          "question": "Do you have to drain the pool to find a leak?",
+          "answer": "Almost never. The vast majority of pool leak inspections are performed with the pool full, using dye, pressure testing, and underwater listening equipment."
+        },
+        {
+          "question": "Can you find leaks in pool plumbing under concrete?",
+          "answer": "Yes. We pressurize and isolate the suction and return plumbing, then use electronic listening tools to locate buried line leaks within a small area."
+        },
+        {
+          "question": "Do you repair the leak too?",
+          "answer": "Our specialty is detection and documentation. We provide a written findings report your pool builder or plumber can use to perform the repair precisely."
+        }
+      ]
+    },
+
+    "contacts": {
+      "heading": "Schedule Your Pool Leak Inspection",
+      "items": [
+        {
+          "type": "phone",
+          "label": "Phone",
+          "value": "(404) 555-0199",
+          "href": "tel:+14045550199"
+        },
+        {
+          "type": "email",
+          "label": "Email",
+          "value": "info@atlantaleakdetectionpros.com",
+          "href": "mailto:info@atlantaleakdetectionpros.com"
+        },
+        {
+          "type": "address",
+          "label": "Service Area",
+          "value": "Atlanta, GA & Surrounding Metro"
+        }
+      ]
+    }
+  },
+
+  "footer": {
+    "siteFooter": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Leak Detection Experts",
+        "href": "/"
+      },
+      "tagline": "Professional leak detection services for residential and commercial properties throughout Atlanta, GA.",
+      "social": [
+        { "label": "Facebook", "href": "https://facebook.com", "bgClass": "bg-blue-600" },
+        { "label": "Instagram", "href": "https://instagram.com", "bgClass": "bg-pink-600" },
+        { "label": "LinkedIn", "href": "https://linkedin.com", "bgClass": "bg-blue-700" }
+      ],
+      "servicesLinks": [
+        { "label": "Water Leak Detection", "href": "/water-leak-detection" },
+        { "label": "Slab Leak Detection", "href": "/slab-leak-detection" },
+        { "label": "Gas Leak Detection", "href": "/gas-leak-detection" },
+        { "label": "Pool Leak Detection", "href": "/pool-leak-detection" }
+      ],
+      "legalLinks": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "/about/" },
+        { "label": "Privacy Policy", "href": "/privacy-policy" },
+        { "label": "Terms & Conditions", "href": "/terms-and-conditions" }
+      ],
+      "contact": {
+        "phone": "(404) 555-0199",
+        "addressLines": ["Atlanta, GA", "Serving Metro Atlanta"],
+        "email": "info@atlantaleakdetectionpros.com"
+      },
+      "disclosure": {
+        "heading": "Service Disclaimer",
+        "body": "This website is a locally operated leak detection service provider serving Atlanta, GA and surrounding areas. Service availability may vary by location."
+      }
+    }
+  }
+}

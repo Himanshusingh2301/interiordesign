@@ -1,0 +1,490 @@
+{
+  "meta": {
+    "title": "Leak Detection Atlanta, GA | Fast & Accurate Leak Detection Services",
+    "description": "Professional leak detection in Atlanta, GA. We locate slab leaks, water leaks, gas leaks, and pool leaks using non-invasive technology and fast response service.",
+    "canonical": "https://www.atlantaleakdetectionpros.com",
+    "ogImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+    "lang": "en"
+  },
+
+  "header": {
+    "navbar": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Fast & Accurate Leak Detection",
+        "href": "/"
+      },
+      "navItems": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Services",
+          "href": "#services",
+          "children": [
+            {
+              "label": "Water Leak Detection",
+              "href": "/water-leak-detection"
+            },
+            {
+              "label": "Slab Leak Detection",
+              "href": "/slab-leak-detection"
+            },
+            {
+              "label": "Gas Leak Detection",
+              "href": "/gas-leak-detection"
+            },
+            {
+              "label": "Pool Leak Detection",
+              "href": "/pool-leak-detection"
+            }
+          ]
+        },
+        {
+          "label": "About",
+          "href": "/about/"
+        },
+        {
+          "label": "FAQs",
+          "href": "#faqs"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ],
+      "cta": {
+        "label": "Call Now",
+        "href": "tel:+14045550199"
+      }
+    }
+  },
+
+  "content": {
+    "hero": {
+      "heading": "Professional Leak Detection Services in Atlanta, GA",
+      "cta": {
+        "label": "Schedule Leak Inspection",
+        "href": "#contact"
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Technician performing leak detection service in Atlanta home"
+      }
+    },
+
+    "intro": {
+      "heading": "Trusted Leak Detection Specialists Serving Atlanta",
+      "paragraphs": [
+        "Hidden leaks can quietly damage your property, increase water bills, and create long-term structural issues if left untreated. Our Atlanta leak detection experts use advanced non-invasive technology to pinpoint leaks quickly and accurately without unnecessary damage to your walls, floors, or landscaping.",
+        "We provide residential and commercial leak detection services throughout Atlanta, helping homeowners and businesses detect slab leaks, underground pipe leaks, gas leaks, and pool leaks with precision. Our goal is to save you time, money, and stress by identifying the exact source of the problem fast."
+      ],
+      "image": {
+        "src": "https://i.pinimg.com/736x/4e/f8/ed/4ef8ed22e71175d36b6a8e3fac537eec.jpg",
+        "alt": "Leak detection technician inspecting plumbing system"
+      }
+    },
+
+    "whyChooseUs":{
+      "heading": "Why Choose Our Outdoor Lighting Company",
+      "intro": "We provide custom outdoor lighting solutions in Wilmington designed for long-term durability, energy efficiency, coastal protection, and beautiful nighttime curb appeal.",
+      "columns": 4,
+      "items": [
+        {
+          "title": "Coastal-Grade Fixtures",
+          "description": "We install marine-grade brass and solid copper outdoor lighting fixtures specifically designed to resist corrosion caused by Wilmington’s salty coastal air and humid weather conditions."
+        },
+        {
+          "title": "Turtle-Safe Lighting",
+          "description": "Our outdoor lighting systems follow Wilmington dark sky and sea turtle lighting guidelines while still providing safe, attractive, and functional illumination for your property."
+        },
+        {
+          "title": "Low Maintenance Systems",
+          "description": "We use waterproof wiring, sealed connections, and professional-grade LED fixtures that reduce maintenance needs and improve long-term outdoor lighting performance."
+        },
+        {
+          "title": "Experienced Installers",
+          "description": "Our outdoor lighting specialists design and install customized lighting systems that improve curb appeal, nighttime visibility, safety, and overall property value."
+        }
+      ]
+    },
+
+    "about": {
+      "heading": "Reliable Leak Detection Services for Homes & Businesses",
+      "paragraphs": [
+        "At Atlanta Leak Detection Pros, we focus on identifying hidden leaks before they become expensive disasters. Whether you have unexplained water bills, damp spots, low water pressure, or suspect a gas leak, our specialists are ready to help.",
+        "Our leak detection process is designed to be accurate, efficient, and minimally disruptive. We work with homeowners, property managers, restaurants, office buildings, and commercial facilities across Atlanta.",
+        "From slab leaks under concrete foundations to underground water line leaks and swimming pool leaks, we deliver professional solutions backed by modern diagnostic technology."
+      ],
+      "cta": {
+        "label": "Request a Free Estimate",
+        "href": "#contact"
+      },
+      "form": {
+        "action": "/contact",
+        "method": "POST",
+        "submitLabel": "Book Inspection",
+        "services": [
+          "Water Leak Detection",
+          "Slab Leak Detection",
+          "Gas Leak Detection",
+          "Pool Leak Detection"
+        ]
+      }
+    },
+
+    "services": {
+      "heading": "Our Leak Detection Services in Atlanta",
+      "items": [
+        {
+          "title": "Water Leak Detection",
+          "href": "/water-leak-detection",
+          "paragraphs": [
+            "Hidden water leaks can lead to mold growth, structural damage, and high utility bills. Our team uses advanced leak detection equipment to identify hidden plumbing leaks inside walls, ceilings, floors, and underground pipes.",
+            "We help Atlanta homeowners locate leaks quickly and accurately while minimizing damage to the property."
+          ],
+          "image": {
+            "src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Water leak detection service in Atlanta home"
+          },
+          "bullets": [
+            {
+              "label": "Hidden Pipe Leaks",
+              "description": "Locate leaks inside walls, ceilings, and underground plumbing systems."
+            },
+            {
+              "label": "Moisture Detection",
+              "description": "Identify hidden moisture before mold and water damage spread."
+            },
+            {
+              "label": "Accurate Diagnostics",
+              "description": "Use electronic leak detection tools for precise leak location."
+            }
+          ]
+        },
+        {
+          "title": "Slab Leak Detection",
+          "href": "/slab-leak-detection",
+          "paragraphs": [
+            "Slab leaks can damage your foundation and create serious structural problems if ignored. We specialize in detecting leaks beneath concrete slabs using non-invasive technology.",
+            "Our Atlanta slab leak detection specialists identify the source of the issue quickly so repairs can begin before further damage occurs."
+          ],
+          "image": {
+            "src": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Slab leak detection beneath concrete foundation"
+          },
+          "bullets": [
+            {
+              "label": "Foundation Leak Detection",
+              "description": "Find hidden leaks beneath concrete slab foundations."
+            },
+            {
+              "label": "Thermal Imaging",
+              "description": "Use advanced imaging tools to detect temperature changes caused by leaks."
+            },
+            {
+              "label": "Prevent Structural Damage",
+              "description": "Early slab leak detection helps protect your property foundation."
+            }
+          ]
+        },
+        {
+          "title": "Gas Leak Detection",
+          "href": "/gas-leak-detection",
+          "paragraphs": [
+            "Gas leaks can be dangerous and should never be ignored. Our trained technicians provide fast and accurate gas leak detection services throughout Atlanta.",
+            "We use specialized detection equipment to identify gas leaks safely and help protect your home or commercial property."
+          ],
+          "image": {
+            "src": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Gas leak detection technician using equipment"
+          },
+          "bullets": [
+            {
+              "label": "Emergency Response",
+              "description": "Fast assistance for suspected gas leaks and hazardous situations."
+            },
+            {
+              "label": "Advanced Gas Detection",
+              "description": "Sensitive equipment accurately identifies leak locations."
+            },
+            {
+              "label": "Safety Focused",
+              "description": "Protect your family and property with immediate leak inspections."
+            }
+          ]
+        },
+        {
+          "title": "Pool Leak Detection",
+          "href": "/pool-leak-detection",
+          "paragraphs": [
+            "Swimming pool leaks can waste water, damage surrounding structures, and increase maintenance costs. We provide professional pool leak detection services for residential and commercial pools in Atlanta.",
+            "Our specialists inspect pool plumbing, liners, fittings, and underground lines to locate leaks accurately."
+          ],
+          "image": {
+            "src": "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Pool leak detection service in Atlanta"
+          },
+          "bullets": [
+            {
+              "label": "Underground Pool Leaks",
+              "description": "Detect hidden leaks in underground pool plumbing systems."
+            },
+            {
+              "label": "Pool Equipment Inspection",
+              "description": "Inspect pumps, filters, and fittings for leak sources."
+            },
+            {
+              "label": "Water Loss Solutions",
+              "description": "Reduce excessive water loss and improve pool efficiency."
+            }
+          ]
+        }
+      ]
+    },
+
+    "proVsDiy": {
+      "heading": "Professional Leak Detection vs DIY Methods",
+      "intro": "While DIY methods may identify visible leaks, professional leak detection services provide accurate results without unnecessary property damage.",
+      "columns": [
+        "Feature",
+        "DIY Leak Checks",
+        "Professional Leak Detection"
+      ],
+      "rows": [
+        [
+          "Accuracy",
+          "Limited visual inspection",
+          "Advanced electronic detection technology"
+        ],
+        [
+          "Hidden Leak Detection",
+          "Difficult to locate underground leaks",
+          "Precise identification of hidden leaks"
+        ],
+        [
+          "Property Damage",
+          "May require guessing and wall removal",
+          "Non-invasive diagnostic methods"
+        ],
+        [
+          "Time Required",
+          "Can take days or weeks",
+          "Fast professional inspections"
+        ],
+        [
+          "Long-Term Cost",
+          "Higher risk of missed leaks",
+          "Early detection reduces repair costs"
+        ]
+      ],
+      "highlightColumn": 2
+    },
+
+    "midCta": {
+      "heading": "Stop Hidden Leaks Before They Cause Major Damage",
+      "body": "Schedule professional leak detection services in Atlanta today and protect your property from costly water and gas damage.",
+      "cta": {
+        "label": "Call for Leak Detection",
+        "href": "tel:+14045550199"
+      },
+      "variant": "primary"
+    },
+
+    "benefits": {
+      "heading": "Benefits of Professional Leak Detection",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Lower Utility Bills",
+          "description": "Detecting leaks early helps reduce unnecessary water and gas waste."
+        },
+        {
+          "title": "Prevent Property Damage",
+          "description": "Avoid structural damage, mold growth, and foundation issues caused by hidden leaks."
+        },
+        {
+          "title": "Improve Safety",
+          "description": "Professional gas leak detection helps protect your family and property."
+        },
+        {
+          "title": "Accurate Results",
+          "description": "Modern leak detection tools identify problems quickly and precisely."
+        },
+        {
+          "title": "Minimize Repairs",
+          "description": "Non-invasive methods reduce unnecessary wall, floor, and landscaping damage."
+        },
+        {
+          "title": "Peace of Mind",
+          "description": "Know your plumbing and gas systems are functioning safely and efficiently."
+        }
+      ]
+    },
+
+    "process": {
+      "heading": "Our Leak Detection Process",
+      "intro": "We follow a proven process to identify leaks accurately while minimizing disruption to your property.",
+      "steps": [
+        {
+          "title": "Initial Inspection",
+          "description": "We assess signs of leaks, review your concerns, and inspect the affected areas."
+        },
+        {
+          "title": "Advanced Leak Detection",
+          "description": "Our technicians use electronic tools, thermal imaging, and acoustic equipment to locate the leak."
+        },
+        {
+          "title": "Precise Diagnosis",
+          "description": "We identify the exact source of the leak and explain the issue clearly."
+        },
+        {
+          "title": "Repair Recommendations",
+          "description": "You receive honest recommendations for repair solutions and next steps."
+        }
+      ],
+      "images": [
+        {
+          "src": "https://i.pinimg.com/736x/4e/f8/ed/4ef8ed22e71175d36b6a8e3fac537eec.jpg",
+          "alt": "Leak detection inspection process"
+        },
+        {
+          "src": "https://i.pinimg.com/736x/4e/f8/ed/4ef8ed22e71175d36b6a8e3fac537eec.jpg",
+          "alt": "Leak detection inspection process"
+        },
+        {
+          "src": "https://i.pinimg.com/736x/4e/f8/ed/4ef8ed22e71175d36b6a8e3fac537eec.jpg",
+          "alt": "Leak detection inspection process"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Technician using leak detection equipment"
+        }
+      ],
+      "reverse": false
+    },
+
+    "faqs": {
+      "heading": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What are common signs of a hidden water leak?",
+          "answer": "Common signs include unusually high water bills, damp spots, mold growth, low water pressure, and sounds of running water when fixtures are turned off."
+        },
+        {
+          "question": "How do professionals detect hidden leaks?",
+          "answer": "We use advanced equipment such as acoustic listening devices, thermal imaging cameras, moisture meters, and electronic leak detection tools."
+        },
+        {
+          "question": "Can you detect leaks without damaging walls or floors?",
+          "answer": "Yes. Our non-invasive leak detection methods allow us to locate leaks accurately while minimizing unnecessary demolition."
+        },
+        {
+          "question": "How serious is a slab leak?",
+          "answer": "Slab leaks can weaken foundations, damage flooring, and increase water bills. Early detection is important to prevent costly structural issues."
+        },
+        {
+          "question": "Do you provide emergency gas leak detection?",
+          "answer": "Yes. We respond quickly to suspected gas leaks and use specialized equipment to locate leaks safely."
+        },
+        {
+          "question": "How long does leak detection take?",
+          "answer": "Most leak detection inspections can be completed within a few hours depending on the complexity and location of the leak."
+        }
+      ],
+      "defaultOpenIndex": 0
+    },
+
+    "contacts": {
+      "heading": "Contact Our Atlanta Leak Detection Team",
+      "items": [
+        {
+          "type": "phone",
+          "label": "Phone",
+          "value": "(404) 555-0199",
+          "href": "tel:+14045550199"
+        },
+        {
+          "type": "email",
+          "label": "Email",
+          "value": "info@atlantaleakdetectionpros.com",
+          "href": "mailto:info@atlantaleakdetectionpros.com"
+        },
+        {
+          "type": "address",
+          "label": "Service Area",
+          "value": "Atlanta, GA & Surrounding Areas"
+        }
+      ]
+    }
+  },
+
+  "footer": {
+    "siteFooter": {
+      "logo": {
+        "primary": "Atlanta Leak Detection Pros",
+        "secondary": "Leak Detection Experts",
+        "href": "/"
+      },
+      "tagline": "Professional leak detection services for residential and commercial properties throughout Atlanta, GA.",
+      "social": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com",
+          "bgClass": "bg-blue-600"
+        },
+        {
+          "label": "Instagram",
+          "href": "https://instagram.com",
+          "bgClass": "bg-pink-600"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://linkedin.com",
+          "bgClass": "bg-blue-700"
+        }
+      ],
+      "servicesLinks": [
+        {
+          "label": "Water Leak Detection",
+          "href": "/water-leak-detection"
+        },
+        {
+          "label": "Slab Leak Detection",
+          "href": "/slab-leak-detection"
+        },
+        {
+          "label": "Gas Leak Detection",
+          "href": "/gas-leak-detection"
+        },
+        {
+          "label": "Pool Leak Detection",
+          "href": "/pool-leak-detection"
+        }
+      ],
+      "legalLinks": [
+        {
+          "label": "Privacy Policy",
+          "href": "/privacy-policy"
+        },
+        {
+          "label": "Terms & Conditions",
+          "href": "/terms-and-conditions"
+        }
+      ],
+      "contact": {
+        "phone": "(404) 555-0199",
+        "addressLines": [
+          "Atlanta, GA",
+          "Serving Metro Atlanta"
+        ],
+        "email": "info@atlantaleakdetectionpros.com"
+      },
+      "disclosure": {
+        "heading": "Service Disclaimer",
+        "body": "This website is a locally operated leak detection service provider serving Atlanta, GA and surrounding areas. Service availability may vary by location."
+      }
+    }
+  }
+}
