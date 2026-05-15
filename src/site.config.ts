@@ -13,7 +13,7 @@
  */
 export const siteConfig = {
   /** Canonical URL of the production site. No trailing slash. */
-  url: "https://atlantaleakdetection.vercel.app",
+  url: "https://atlantaleakdetection02.vercel.app",
 
   /**
    * When false: every HTML page emits `noindex, nofollow`, JSON-LD is omitted,
