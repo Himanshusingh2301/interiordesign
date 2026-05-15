@@ -2,7 +2,7 @@
  * Build-time generator for public/sitemap.xml and public/robots.txt.
  *
  * Runs automatically before `astro build` (see `prebuild` in package.json).
- * Pulls the site URL from src/site.config.ts and enumerates routes by
+ * Pulls the site URL from `PUBLIC_SITE_URL` / `site-url.ts` and enumerates routes by
  * scanning the filesystem — no manual sitemap edits needed when you add
  * new pages or service JSON files.
  */
@@ -11,11 +11,12 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { siteConfig } from "../src/site.config";
+import { resolveSiteUrl } from "../src/lib/site-url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 
-const baseUrl = siteConfig.url.replace(/\/$/, "");
+const baseUrl = resolveSiteUrl();
 
 function indexingAllowed(): boolean {
   const env = process.env.PUBLIC_ALLOW_INDEXING;

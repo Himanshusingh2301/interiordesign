@@ -21,14 +21,14 @@ import {
   faqPageSchema,
   localBusinessSchema,
 } from "../lib/structured-data";
-import { siteConfig, siteOrigin } from "../site.config";
+import { siteConfig } from "../site.config";
+import { resolveSiteUrl } from "../lib/site-url";
 
 // Slots in home.json are optional overrides. Each section below always mounts;
 // missing or partial slot data falls back to that section's built-in defaults.
 const home = homePageSchema.parse(homeData);
 const { header, content, footer } = home;
 
-const siteUrl = (Astro.site ?? new URL(siteOrigin)).href;
 const businessName = home.header.navbar?.logo?.primary ?? siteConfig.business.name;
 const footerContact = footer.siteFooter?.contact;
 const socialLinks =
@@ -37,7 +37,7 @@ const socialLinks =
 const jsonLd = [
   localBusinessSchema({
     name: businessName,
-    url: siteUrl,
+    url: `${resolveSiteUrl()}/`,
     description: home.meta.description,
     telephone: footerContact?.phone,
     email: footerContact?.email,
@@ -58,7 +58,6 @@ const jsonLd = [
 <Layout
   title={home.meta.title}
   description={home.meta.description}
-  canonical={home.meta.canonical}
   ogImage={home.meta.ogImage}
   noindex={home.meta.noindex}
   lang={home.meta.lang}

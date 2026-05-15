@@ -33,6 +33,7 @@ business sites by editing **one config file plus a few JSON files**.
 │   │   └── Layout.astro     # SEO head + JSON-LD injection
 │   ├── lib/
 │   │   ├── structured-data.ts  # JSON-LD builders
+│   │   ├── site-url.ts         # PUBLIC_SITE_URL + SITE_URL_FALLBACK
 │   │   └── indexing.ts         # allowIndexing + PUBLIC_ALLOW_INDEXING
 │   ├── pages/
 │   │   ├── index.astro      # home page
@@ -81,15 +82,28 @@ the page.
 Per-page opt-out still works: pass `noindex: true` in page JSON meta (e.g.
 the 404 page). That stays in effect even when the site is indexable.
 
+## Public site URL (`PUBLIC_SITE_URL`)
+
+Canonical links, Open Graph URLs, `astro.config` `site`, sitemap, robots, and
+JSON-LD business `@id` all follow **one** value:
+
+1. **`PUBLIC_SITE_URL`** in `.env` (local) or **Vercel → Environment Variables**
+   (e.g. `https://your-project.vercel.app`) — **no trailing path**.
+2. If unset: **`SITE_URL_FALLBACK`** in `src/site.config.ts`.
+
+Set `PUBLIC_SITE_URL` on Vercel for Production so a new `*.vercel.app` or
+custom domain never needs editing JSON. Page JSON **does not** store
+`canonical` anymore; it is always derived from this URL + current path.
+
 ## Spinning up a new site from this template
 
 The checklist for cloning this repo into a new brand:
 
 ### 1. Edit `src/site.config.ts`
 
-This is the **only** place to edit site-wide identity. Update:
+This is the **only** place to edit site-wide defaults. Update:
 
-- `url` — production URL (e.g. `https://newsite.vercel.app`)
+- `SITE_URL_FALLBACK` — used when `PUBLIC_SITE_URL` is not set (template default hostname)
 - `allowIndexing` — set `false` while the site is staging; `true` when live
   (or use `PUBLIC_ALLOW_INDEXING` in `.env` / Vercel instead)
 - `business.name`, `shortName`
@@ -99,8 +113,10 @@ This is the **only** place to edit site-wide identity. Update:
 - `business.openingHours` — schema.org format (`"Mo-Sa 08:00-18:00"`)
 - `business.priceRange` — `"$"`, `"$$"`, `"$$$"`, `"$$$$"`
 
-`astro.config.mjs`, JSON-LD schemas, the sitemap generator, and
-`robots.txt` all read from this file. **Do not edit them by hand**.
+`astro.config.mjs`, JSON-LD builders, and the sitemap generator resolve the
+live hostname via `src/lib/site-url.ts`. Prefer **`PUBLIC_SITE_URL`** on Vercel
+over editing fallbacks. **Do not edit** `public/robots.txt` or
+`public/sitemap.xml` by hand.
 
 ### 2. Replace JSON content
 

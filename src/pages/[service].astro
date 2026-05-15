@@ -22,11 +22,11 @@ import {
   faqPageSchema,
   serviceSchema,
 } from "../lib/structured-data";
+import { siteConfig } from "../site.config";
 import {
-  siteConfig,
-  siteOrigin as defaultOrigin,
-  businessJsonLdId,
-} from "../site.config";
+  siteOriginHref,
+  businessJsonLdIdHref,
+} from "../lib/site-url";
 
 export const getStaticPaths = (() => {
   const modules = import.meta.glob<{ default: unknown }>(
@@ -48,7 +48,7 @@ interface Props {
 const { data } = Astro.props as Props;
 const { header, content, footer } = data;
 
-const siteOrigin = (Astro.site ?? new URL(defaultOrigin)).href;
+const siteOrigin = (Astro.site ?? new URL(siteOriginHref())).href;
 const pageUrl = new URL(Astro.url.pathname, siteOrigin).toString();
 const businessName = data.header.navbar?.logo?.primary ?? siteConfig.business.name;
 const serviceName = content.hero?.heading ?? data.meta.title;
@@ -62,7 +62,7 @@ const jsonLd = [
     provider: {
       name: businessName,
       url: siteOrigin,
-      id: businessJsonLdId,
+      id: businessJsonLdIdHref(),
     },
   }),
   breadcrumbListSchema([
@@ -76,7 +76,6 @@ const jsonLd = [
 <Layout
   title={data.meta.title}
   description={data.meta.description}
-  canonical={data.meta.canonical}
   ogImage={data.meta.ogImage}
   noindex={data.meta.noindex}
   lang={data.meta.lang}

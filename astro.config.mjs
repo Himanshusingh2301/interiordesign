@@ -2,12 +2,11 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
-import { siteConfig } from './src/site.config';
+import { resolveSiteUrl } from './src/lib/site-url';
 
-// All site identity (URL, business name, brand color tints, etc.) lives in
-// src/site.config.ts. Editing that file is the single per-site change.
+// `PUBLIC_SITE_URL` on Vercel / `.env` overrides; see `src/lib/site-url.ts`.
 export default defineConfig({
-  site: siteConfig.url,
+  site: resolveSiteUrl(),
 
   vite: {
     plugins: [tailwindcss()],
