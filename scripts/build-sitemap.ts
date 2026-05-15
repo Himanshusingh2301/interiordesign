@@ -10,12 +10,22 @@ import { readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { siteConfig } from "../src/site.config.ts";
+import { siteConfig } from "../src/site.config";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 
 const baseUrl = siteConfig.url.replace(/\/$/, "");
+
+function indexingAllowed(): boolean {
+  const env = process.env.PUBLIC_ALLOW_INDEXING;
+  if (typeof env === "string") {
+    const v = env.trim().toLowerCase();
+    if (v === "false" || v === "0" || v === "no") return false;
+    if (v === "true" || v === "1" || v === "yes") return true;
+  }
+  return siteConfig.allowIndexing;
+}
 
 /** Static `.astro` pages under src/pages/, excluding dynamic + error routes. */
 function listStaticPages(): string[] {
@@ -65,21 +75,35 @@ ${body}
   return outPath;
 }
 
-function writeRobots() {
-  const txt = `# ${baseUrl}/
-User-agent: *
-Allow: /
-
-Sitemap: ${baseUrl}/sitemap.xml
-`;
+function writeRobots(disallowAll: boolean) {
+  const lines = disallowAll
+    ? [
+        `# ${baseUrl}/ - indexing disabled (siteConfig.allowIndexing or PUBLIC_ALLOW_INDEXING)`,
+        `User-agent: *`,
+        `Disallow: /`,
+        ``,
+        `# No sitemap while blocked. Re-enable indexing and rebuild.`,
+      ]
+    : [
+        `# ${baseUrl}/`,
+        `User-agent: *`,
+        `Allow: /`,
+        ``,
+        `Sitemap: ${baseUrl}/sitemap.xml`,
+      ];
+  const txt = lines.join("\n") + "\n";
   const outPath = resolve(root, "public/robots.txt");
   writeFileSync(outPath, txt, "utf8");
   return outPath;
 }
 
-const urls = buildUrlList();
+const allowIndex = indexingAllowed();
+const urls = allowIndex ? buildUrlList() : [];
 const sitemapPath = writeSitemap(urls);
-const robotsPath = writeRobots();
+const robotsPath = writeRobots(!allowIndex);
 
+console.log(
+  `Indexing: ${allowIndex ? "allowed" : "BLOCKED (noindex + robots Disallow: /)"}`,
+);
 console.log(`Generated ${sitemapPath} (${urls.length} URLs)`);
 console.log(`Generated ${robotsPath}`);

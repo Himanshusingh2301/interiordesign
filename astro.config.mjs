@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
-import { siteConfig } from './src/site.config.ts';
+import { siteConfig } from './src/site.config';
 
 // All site identity (URL, business name, brand color tints, etc.) lives in
 // src/site.config.ts. Editing that file is the single per-site change.

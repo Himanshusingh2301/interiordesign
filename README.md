@@ -32,7 +32,8 @@ business sites by editing **one config file plus a few JSON files**.
 │   ├── layouts/
 │   │   └── Layout.astro     # SEO head + JSON-LD injection
 │   ├── lib/
-│   │   └── structured-data.ts  # JSON-LD builders
+│   │   ├── structured-data.ts  # JSON-LD builders
+│   │   └── indexing.ts         # allowIndexing + PUBLIC_ALLOW_INDEXING
 │   ├── pages/
 │   │   ├── index.astro      # home page
 │   │   ├── about.astro      # about page
@@ -56,6 +57,30 @@ business sites by editing **one config file plus a few JSON files**.
 | `npm run sitemap`  | Regenerate `public/sitemap.xml` + `public/robots.txt`    |
 | `npm run content:ai` | Generate `home.json` from a `.docx` via OpenAI         |
 
+## Controlling search indexing (staging vs live)
+
+When a site is not ready for Google, block indexing in one of two ways:
+
+1. **Config file** — in `src/site.config.ts`, set `allowIndexing: false`.
+   Every page then gets `<meta name="robots" content="noindex, nofollow">`,
+   JSON-LD is not emitted, `robots.txt` uses `Disallow: /`, and the sitemap is
+   empty. Set back to `true` when you are ready, then rebuild and deploy.
+
+2. **Environment variable** (good for Vercel) — set
+   `PUBLIC_ALLOW_INDEXING=false` on Preview deployments and
+   `PUBLIC_ALLOW_INDEXING=true` (or omit) on Production. This overrides
+   `siteConfig.allowIndexing` at build time for that deploy only.
+
+`npm run dev` reads `.env` if you add `PUBLIC_ALLOW_INDEXING=false` there.
+
+**Note:** `noindex` is the reliable way to keep pages out of Google.
+`robots.txt Disallow` does not guarantee non-indexing if other sites link to
+your URL; the meta tag + no JSON-LD is what matters once a crawler fetches
+the page.
+
+Per-page opt-out still works: pass `noindex: true` in page JSON meta (e.g.
+the 404 page). That stays in effect even when the site is indexable.
+
 ## Spinning up a new site from this template
 
 The checklist for cloning this repo into a new brand:
@@ -65,6 +90,8 @@ The checklist for cloning this repo into a new brand:
 This is the **only** place to edit site-wide identity. Update:
 
 - `url` — production URL (e.g. `https://newsite.vercel.app`)
+- `allowIndexing` — set `false` while the site is staging; `true` when live
+  (or use `PUBLIC_ALLOW_INDEXING` in `.env` / Vercel instead)
 - `business.name`, `shortName`
 - `business.addressLocality`, `addressRegion`, `addressCountry`
 - `business.streetAddress`, `postalCode` (optional)

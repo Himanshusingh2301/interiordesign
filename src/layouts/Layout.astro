@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { siteConfig } from "../site.config";
+import { isIndexingAllowed } from "../lib/indexing";
 
 export interface Props {
   /** Page title — drives <title> and og:title */
@@ -35,6 +36,10 @@ const {
   preloadImage,
 } = Astro.props;
 
+const indexingAllowed = isIndexingAllowed();
+const effectiveNoindex = !indexingAllowed || noindex;
+const effectiveJsonLd = indexingAllowed ? jsonLd : [];
+
 const siteOrigin = Astro.site ?? new URL("http://localhost:4321");
 const canonicalUrl =
   canonical ?? new URL(Astro.url.pathname, siteOrigin).toString();
@@ -54,7 +59,7 @@ const ogImageUrl = ogImage
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {effectiveNoindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
@@ -88,7 +93,7 @@ const ogImageUrl = ogImage
     <meta name="theme-color" content="#ffffff" />
 
     {
-      jsonLd.map((item) => (
+      effectiveJsonLd.map((item) => (
         <script type="application/ld+json" set:html={JSON.stringify(item)} />
       ))
     }
