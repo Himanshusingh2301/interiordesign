@@ -20,7 +20,7 @@ export const siteConfig = {
    * robots.txt blocks all crawlers, and sitemap is empty. Flip to true when
    * the site is ready for Google. Override per deploy with `PUBLIC_ALLOW_INDEXING`.
    */
-  allowIndexing: false,
+  allowIndexing: true,
 
   /** Default <html lang> attribute for every page. */
   lang: "en",

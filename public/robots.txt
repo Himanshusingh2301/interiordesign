@@ -1,5 +1,5 @@
-# https://atlantaleakdetection.vercel.app/ - indexing disabled (siteConfig.allowIndexing or PUBLIC_ALLOW_INDEXING)
+# https://atlantaleakdetection.vercel.app/
 User-agent: *
-Disallow: /
+Allow: /
 
-# No sitemap while blocked. Re-enable indexing and rebuild.
+Sitemap: https://atlantaleakdetection.vercel.app/sitemap.xml
