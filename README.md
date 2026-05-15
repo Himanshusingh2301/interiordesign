@@ -20,7 +20,7 @@ business sites by editing **one config file plus a few JSON files**.
 ├── public/
 │   ├── robots.txt           # auto-generated from siteConfig
 │   ├── sitemap.xml          # auto-generated from routes
-│   └── google*.html         # Search Console verification (manual)
+│   └── google*.html         # optional: Search Console file verification
 ├── scripts/
 │   ├── build-sitemap.ts     # runs as `prebuild`; emits sitemap + robots
 │   └── content-ai.ts        # optional: docx -> AI -> home.json
@@ -155,10 +155,16 @@ The SVG logos live inline inside:
 
 Replace the `<svg>` blocks with the new brand's mark.
 
-### 5. Drop the Google Search Console verification file in `public/`
+### 5. Verify Google Search Console (pick one)
 
-Download the HTML verification file from Search Console and place it in
-`public/`. It will be served verbatim.
+**HTML tag (recommended with this repo):** In Search Console, copy the
+`content="..."` value from the meta tag Google shows. On Vercel, add environment
+variable **`PUBLIC_GOOGLE_SITE_VERIFICATION`** with that value only (no
+quotes in the Vercel UI). For local testing, add the same to `.env`. Redeploy,
+then click **Verify** in Search Console.
+
+Alternatively: download the **HTML file** method’s file into `public/` — it
+is served verbatim at `https://your-site/google….html`.
 
 ### 6. Build + deploy
 

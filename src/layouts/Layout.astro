@@ -46,6 +46,11 @@ const canonicalUrl =
 const ogImageUrl = ogImage
   ? new URL(ogImage, siteOrigin).toString()
   : undefined;
+
+const googleSiteVerification =
+  typeof import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION === "string"
+    ? import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION.trim()
+    : "";
 ---
 
 <!doctype html>
@@ -54,6 +59,11 @@ const ogImageUrl = ogImage
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    {
+      googleSiteVerification && (
+        <meta name="google-site-verification" content={googleSiteVerification} />
+      )
+    }
 
     <!-- Primary SEO -->
     <title>{title}</title>
