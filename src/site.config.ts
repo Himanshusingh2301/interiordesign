@@ -47,4 +47,7 @@ export const siteConfig = {
     /** "$", "$$", "$$$", "$$$$". */
     priceRange: "$$",
   },
+
+  /** Search Console HTML tag — `content` value only. Overridden by env. */
+  googleSiteVerification: "aMSIfEgsfvf5uPEd1THipIw6ShwmXu1m_kngSGGn7UU",
 } as const;

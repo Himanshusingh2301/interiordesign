@@ -47,10 +47,12 @@ const ogImageUrl = ogImage
   ? new URL(ogImage, siteOrigin).toString()
   : undefined;
 
-const googleSiteVerification =
+const envVerification =
   typeof import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION === "string"
     ? import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION.trim()
     : "";
+const googleSiteVerification =
+  envVerification || siteConfig.googleSiteVerification;
 ---
 
 <!doctype html>
