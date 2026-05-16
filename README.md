@@ -155,16 +155,22 @@ The SVG logos live inline inside:
 
 Replace the `<svg>` blocks with the new brand's mark.
 
-### 5. Verify Google Search Console (pick one)
+### 5. Verify Google Search Console (HTML file — recommended)
 
-**HTML tag (recommended with this repo):** In Search Console, copy the
-`content="..."` value from the meta tag Google shows. On Vercel, add environment
-variable **`PUBLIC_GOOGLE_SITE_VERIFICATION`** with that value only (no
-quotes in the Vercel UI). For local testing, add the same to `.env`. Redeploy,
-then click **Verify** in Search Console.
+1. In [Search Console](https://search.google.com/search-console), open your property
+   (URL must match production, e.g. `https://yoursite.vercel.app`).
+2. **Settings → Ownership verification → HTML file** → **Download** the file.
+   Do not rename it or change the one line inside.
+3. Copy that file into this repo’s **`public/`** folder (same name as downloaded).
+4. Deploy. In a private/incognito window, open  
+   `https://your-site/<exact-filename>.html` — you should see one line like  
+   `google-site-verification: google….html`.
+5. In Search Console, click **Verify**.
 
-Alternatively: download the **HTML file** method’s file into `public/` — it
-is served verbatim at `https://your-site/google….html`.
+Astro copies everything in `public/` to the site root, so no extra config is needed.
+
+**HTML tag (optional):** set `PUBLIC_GOOGLE_SITE_VERIFICATION` in Vercel / `.env`
+to the meta tag `content` value only, then redeploy.
 
 ### 6. Build + deploy
 

@@ -8,7 +8,8 @@
  *   3. Update business fields in this file.
  *   4. Replace JSON under `src/content/`.
  *   5. Replace logos in `Navbar.astro` and `SiteFooter.astro` if needed.
- *   6. Add Google Search Console HTML file to `public/` when ready.
+ *   6. Search Console (HTML file): download the file from GSC → `public/` unchanged.
+ *      Served at `https://your-site/google….html` (see README).
  *   7. Run `npm run build` — robots.txt and sitemap.xml regenerate automatically.
  */
 
