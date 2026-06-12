@@ -6,9 +6,13 @@
   },
   "modernInteriorHero": {
     "heading": "Interior Designer in Indore | Premium Interior Designers, Architects, and Decorators",
-    "description": "Most people start by calling us. We talk through your space, your budget, and what you want — no pressure, no one shows up at your door yet. When you are ready to move forward, we visit your site, prepare your floor plan and 3D designs, and give you a full cost breakdown before anything begins.",
+    "description": [
+      "Studio Amber's Interior Designers in Indore transform homes and offices in the city by offering turnkey interior design projects starting from ₹25,000.",
+      "We work closely with homeowners in Vijay Nagar, Palasia, Scheme 54, Scheme 140, and other parts of Indore to reimagine their living experience.",
+      "We enhance all kinds of residential spaces in the city — 1BHK flats, 2BHK and 3BHK apartments, villas, and independent houses."
+    ],
     "callButton": {
-      "label": "Book a Free Call",
+      "label": "Book a Free Site Visit",
       "href": "tel:+919876543210"
     },
     "whatsapp": {

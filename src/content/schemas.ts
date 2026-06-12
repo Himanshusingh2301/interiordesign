@@ -226,7 +226,7 @@ export const sec045BusinessSchema = z.object({
 
 export const sec045PropsSchema = z.object({
   heading: z.string(),
-  description: z.string(),
+  description: z.union([z.string(), z.array(z.string())]),
   callButton: ctaSchema,
   whatsapp: ctaSchema,
   cards: z.array(sec045CardSchema).min(1).max(3),
