@@ -18,11 +18,11 @@ const section = content.consultationBar;
   <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#d8b15a]/20 to-transparent" aria-hidden="true"></div>
 
   <div class="relative z-10 mx-auto w-[92%] max-w-[1350px]">
-    <div class="flex flex-wrap items-center justify-between gap-6 lg:flex-nowrap">
+    <div class="flex flex-col items-center gap-6 lg:flex-row lg:flex-nowrap lg:items-center lg:justify-between">
 
-      <!-- LEFT Ã¢â‚¬â€ icon + text -->
+      <!-- LEFT — icon + text -->
       <div
-        class="flex shrink-0 items-center gap-4"
+        class="flex w-full shrink-0 items-center justify-center gap-4 lg:w-auto lg:justify-start"
         data-reveal="left"
         data-reveal-delay="0"
       >
@@ -43,7 +43,7 @@ const section = content.consultationBar;
           </svg>
         </div>
 
-        <div>
+        <div class="text-center lg:text-left">
           <p class="text-[12px] font-medium uppercase tracking-[0.18em] text-[#d8b15a]/80">
             {section.help.title}
           </p>
@@ -57,11 +57,11 @@ const section = content.consultationBar;
       <div class="hidden h-12 w-px shrink-0 bg-white/8 lg:block" aria-hidden="true"></div>
 
       <!-- STATS -->
-      <div class="flex flex-1 flex-wrap items-center justify-center gap-6 lg:gap-0">
+      <div class="flex w-full flex-nowrap items-center justify-center gap-2 sm:gap-6 lg:flex-1 lg:gap-0">
         {
           section.stats.map((item, index) => (
             <div
-              class="relative flex flex-col items-center px-6 text-center first:pl-0 lg:flex-1"
+              class="relative flex min-w-0 flex-1 flex-col items-center px-1 text-center sm:px-6 lg:flex-1"
               data-reveal="up"
               data-reveal-delay={String(200 + index * 180)}
             >
@@ -70,11 +70,11 @@ const section = content.consultationBar;
                 <div class="absolute inset-y-0 left-0 hidden w-px bg-white/8 lg:block" aria-hidden="true" />
               )}
 
-              <span class="text-[30px] font-extrabold leading-none tracking-tight text-[#d8b15a] lg:text-[34px]">
+              <span class="text-[22px] font-extrabold leading-none tracking-tight text-[#d8b15a] sm:text-[30px] lg:text-[34px]">
                 {item.number}
               </span>
 
-              <span class="mt-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/50">
+              <span class="mt-1 text-[9px] font-medium uppercase leading-tight tracking-[0.1em] text-white/50 sm:mt-1.5 sm:text-[12px] sm:tracking-[0.14em]">
                 {item.label}
               </span>
             </div>
@@ -88,7 +88,7 @@ const section = content.consultationBar;
       <!-- CTA BUTTON -->
       <a
         href={section.button.link}
-        class="group relative shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-[#d8b15a] to-[#b8923e] px-7 py-4 text-[14px] font-bold uppercase tracking-[0.12em] text-[#1C1008] shadow-[0_8px_28px_rgba(216,177,90,0.30)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_rgba(216,177,90,0.50)]"
+        class="group relative mx-auto shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-[#d8b15a] to-[#b8923e] px-7 py-4 text-[14px] font-bold uppercase tracking-[0.12em] text-[#1C1008] shadow-[0_8px_28px_rgba(216,177,90,0.30)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_rgba(216,177,90,0.50)] lg:mx-0"
         data-reveal="right"
         data-reveal-delay="700"
       >
