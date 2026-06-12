@@ -1,0 +1,69 @@
+{
+  "logo": {
+    "primary": "Artisan",
+    "accent": "Interiors",
+    "tagline": "Indore",
+    "href": "/"
+  },
+  "services": [
+    {
+      "label": "Living Room Design",
+      "href": "#living-room",
+      "icon": "sofa",
+      "desc": "Statement spaces that reflect you"
+    },
+    {
+      "label": "Bedroom Interior",
+      "href": "#bedroom",
+      "icon": "bed",
+      "desc": "Serene, luxurious personal retreats"
+    },
+    {
+      "label": "Modular Kitchen",
+      "href": "#kitchen",
+      "icon": "kitchen",
+      "desc": "Smart, beautiful functional kitchens"
+    },
+    {
+      "label": "Office & Commercial",
+      "href": "#office",
+      "icon": "office",
+      "desc": "Productive, branded work environments"
+    },
+    {
+      "label": "False Ceiling & Lighting",
+      "href": "#ceiling",
+      "icon": "ceiling",
+      "desc": "Mood lighting and ceiling artistry"
+    },
+    {
+      "label": "3D Design & Visualization",
+      "href": "#3d",
+      "icon": "cube",
+      "desc": "See your space before it's built"
+    },
+    {
+      "label": "Bathroom Interior",
+      "href": "#bathroom",
+      "icon": "bath",
+      "desc": "Spa-like finishes and fittings"
+    },
+    {
+      "label": "Turnkey Projects",
+      "href": "#turnkey",
+      "icon": "key",
+      "desc": "End-to-end delivery, zero stress"
+    }
+  ],
+  "navItems": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "#about" },
+    { "label": "Portfolio", "href": "#portfolio" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "cta": {
+    "label": "Book Free Consultation",
+    "href": "tel:+919876543210"
+  },
+  "phone": "+91 98765 43210"
+}

@@ -1,0 +1,385 @@
+---
+import navData from "../data/interiorNavbar.json";
+
+const { logo, services, navItems, cta, phone } = navData;
+
+const serviceIcons: Record<string, string> = {
+  sofa:    "M3 12V9a2 2 0 012-2h14a2 2 0 012 2v3M3 12h18M3 12v5a1 1 0 001 1h16a1 1 0 001-1v-5",
+  bed:     "M3 12V7a2 2 0 012-2h4v7M3 12h18M9 5h6a2 2 0 012 2v5M3 17v-5h18v5",
+  kitchen: "M8 3v4m8-4v4M3 8h18M5 8v12h14V8",
+  office:  "M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM8 21V7m8 14V7",
+  ceiling: "M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z M9 22V12h6v10",
+  cube:    "M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z",
+  bath:    "M3 17h18M5 17V9a4 4 0 014-4h6a4 4 0 014 4v8M7 17V9m10 8V9",
+  key:     "M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4",
+};
+---
+
+<!-- Spacer so fixed navbar doesn't overlap content -->
+<div id="interior-navbar-spacer" class="w-full" style="height: var(--navbar-h, 72px);"></div>
+
+<header
+  class="interior-nav fixed top-0 left-0 right-0 z-50 w-full"
+  id="interior-navbar"
+>
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-[#2E1A0C]/95 backdrop-blur-xl" aria-hidden="true"></div>
+
+  <!-- Top accent line -->
+  <div class="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#d8b15a] to-transparent" aria-hidden="true"></div>
+
+  <div class="relative mx-auto flex w-[92%] max-w-[1350px] items-center justify-between gap-6 py-4">
+
+    <!-- â”€â”€ Logo â”€â”€ -->
+    <a
+      href={logo.href}
+      class="group flex shrink-0 items-center gap-3"
+      aria-label={`${logo.primary} ${logo.accent} â€” Interior Designers in Indore`}
+    >
+      <!-- Icon mark -->
+      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#d8b15a] to-[#b8923e] shadow-[0_4px_16px_rgba(216,177,90,0.35)] transition duration-300 group-hover:shadow-[0_6px_24px_rgba(216,177,90,0.55)]">
+        <svg class="h-5 w-5 text-[#2E1A0C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6H8v6H4a1 1 0 01-1-1v-9.5z"/>
+        </svg>
+      </div>
+
+      <span class="flex flex-col leading-none">
+        <span class="text-[18px] font-black tracking-tight text-white">
+          {logo.primary}<span class="text-[#d8b15a]">{logo.accent}</span>
+        </span>
+        <span class="mt-0.5 text-[10px] font-medium tracking-[0.22em] text-white/45 uppercase">{logo.tagline}</span>
+      </span>
+    </a>
+
+    <!-- â”€â”€ Desktop Nav â”€â”€ -->
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
+
+      {navItems.slice(0, 1).map((item) => (
+        <a
+          href={item.href}
+          class="rounded-lg px-4 py-2 text-[14px] font-medium text-white/75 transition duration-200 hover:bg-white/8 hover:text-white"
+        >
+          {item.label}
+        </a>
+      ))}
+
+      <!-- Services Dropdown -->
+      <div class="services-dropdown-root group/drop relative">
+        <button
+          class="inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-[14px] font-medium text-white/75 transition duration-200 hover:bg-white/8 hover:text-white"
+          aria-haspopup="true"
+          aria-expanded="false"
+          id="services-btn"
+        >
+          Services
+          <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover/drop:rotate-180" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.25L6 7.75l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Mega dropdown panel -->
+        <div
+          class="services-panel pointer-events-none invisible absolute left-1/2 top-full z-50 w-[640px] -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-250 group-hover/drop:pointer-events-auto group-hover/drop:visible group-hover/drop:translate-y-0 group-hover/drop:opacity-100"
+          role="region"
+          aria-label="Services submenu"
+        >
+          <!-- bridge gap -->
+          <div class="absolute inset-x-0 -top-3 h-4" aria-hidden="true"></div>
+
+          <div class="overflow-hidden rounded-2xl border border-white/10 bg-[#2E1A0C]/98 shadow-[0_24px_80px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+
+            <!-- Panel header -->
+            <div class="flex items-center justify-between border-b border-white/8 px-5 py-3.5">
+              <span class="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#d8b15a]">Our Services</span>
+              <span class="text-[11px] text-white/35">Interior design in Indore</span>
+            </div>
+
+            <!-- Services grid -->
+            <ul class="grid grid-cols-2 gap-px bg-white/5 p-px">
+              {services.map((s) => (
+                <li class="bg-[#2E1A0C]">
+                  <a
+                    href={s.href}
+                    class="group/item flex items-start gap-3.5 px-5 py-4 transition duration-200 hover:bg-white/6"
+                  >
+                    <div class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#d8b15a]/12 text-[#d8b15a] transition duration-200 group-hover/item:bg-[#d8b15a]/22">
+                      <svg class="h-4.5 w-4.5 h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d={serviceIcons[s.icon] ?? serviceIcons.cube}/>
+                      </svg>
+                    </div>
+                    <div class="min-w-0">
+                      <p class="text-[13.5px] font-semibold text-white transition duration-200 group-hover/item:text-[#d8b15a]">{s.label}</p>
+                      <p class="mt-0.5 text-[12px] leading-snug text-white/45">{s.desc}</p>
+                    </div>
+                    <svg class="ml-auto mt-1 h-4 w-4 shrink-0 translate-x-0 text-white/20 opacity-0 transition-all duration-200 group-hover/item:translate-x-1 group-hover/item:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Panel footer -->
+            <div class="flex items-center justify-between border-t border-white/8 px-5 py-3.5">
+              <span class="text-[12px] text-white/40">Not sure what you need? <a href="#contact" class="text-[#d8b15a] hover:underline">Talk to us</a></span>
+              <a href="#services" class="inline-flex items-center gap-1 text-[12px] font-semibold text-[#d8b15a] hover:underline">
+                View all â†’
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {navItems.slice(1).map((item) => (
+        <a
+          href={item.href}
+          class="rounded-lg px-4 py-2 text-[14px] font-medium text-white/75 transition duration-200 hover:bg-white/8 hover:text-white"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- â”€â”€ Right side â”€â”€ -->
+    <div class="flex items-center gap-3">
+
+      <!-- Phone (desktop) -->
+      <a
+        href={`tel:${phone.replace(/\s/g, "")}`}
+        class="hidden items-center gap-2 text-[13px] font-medium text-white/60 transition duration-200 hover:text-white xl:flex"
+        aria-label="Call us"
+      >
+        <svg class="h-3.5 w-3.5 text-[#d8b15a]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-.43 1.402L5.27 8.962a11.04 11.04 0 005.768 5.769l1.162-1.13a1.5 1.5 0 011.402-.43l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-7.18 0-13-5.82-13-13V3.5z" clip-rule="evenodd"/>
+        </svg>
+        {phone}
+      </a>
+
+      <!-- CTA -->
+      <a
+        href={cta.href}
+        class="hidden items-center gap-2 rounded-xl bg-gradient-to-br from-[#d8b15a] to-[#b8923e] px-5 py-2.5 text-[13.5px] font-bold text-[#2E1A0C] shadow-[0_4px_20px_rgba(216,177,90,0.3)] transition duration-300 hover:-translate-y-px hover:shadow-[0_8px_28px_rgba(216,177,90,0.45)] sm:flex"
+      >
+        <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-.43 1.402L5.27 8.962a11.04 11.04 0 005.768 5.769l1.162-1.13a1.5 1.5 0 011.402-.43l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-7.18 0-13-5.82-13-13V3.5z" clip-rule="evenodd"/>
+        </svg>
+        {cta.label}
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="mobile-menu-btn"
+        class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/6 text-white transition duration-200 hover:border-[#d8b15a]/40 hover:bg-white/12 lg:hidden"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg id="menu-icon-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="menu-icon-close" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- â”€â”€ Mobile Menu â”€â”€ -->
+  <div
+    id="mobile-menu"
+    class="mobile-menu-closed relative border-t border-white/8 lg:hidden"
+    aria-hidden="true"
+  >
+    <div class="mx-auto w-[92%] max-w-[1350px] py-4">
+      <nav aria-label="Mobile navigation">
+        <ul class="flex flex-col gap-1">
+
+          <li>
+            <a href="/" class="block rounded-xl px-4 py-3 text-[14px] font-medium text-white/75 transition hover:bg-white/8 hover:text-white">Home</a>
+          </li>
+
+          <!-- Mobile services accordion -->
+          <li>
+            <button
+              id="mobile-services-btn"
+              class="flex w-full items-center justify-between rounded-xl px-4 py-3 text-[14px] font-medium text-white/75 transition hover:bg-white/8 hover:text-white"
+              aria-expanded="false"
+              aria-controls="mobile-services-list"
+            >
+              Services
+              <svg id="mobile-services-chevron" class="h-4 w-4 transition-transform duration-200" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 4.25L6 7.75l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <ul
+              id="mobile-services-list"
+              class="mobile-services-closed mt-1 grid grid-cols-1 gap-1 overflow-hidden rounded-xl bg-white/4 px-2 py-0 sm:grid-cols-2"
+            >
+              {services.map((s) => (
+                <li>
+                  <a
+                    href={s.href}
+                    class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/65 transition hover:bg-white/8 hover:text-white"
+                  >
+                    <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#d8b15a]/12 text-[#d8b15a]">
+                      <svg class="h-[14px] w-[14px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d={serviceIcons[s.icon] ?? serviceIcons.cube}/>
+                      </svg>
+                    </div>
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+
+          {navItems.slice(1).map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="block rounded-xl px-4 py-3 text-[14px] font-medium text-white/75 transition hover:bg-white/8 hover:text-white"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Mobile CTA -->
+      <div class="mt-4 flex flex-col gap-2 border-t border-white/8 pt-4">
+        <a
+          href={cta.href}
+          class="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#d8b15a] to-[#b8923e] py-3.5 text-[14px] font-bold text-[#2E1A0C] shadow-[0_4px_20px_rgba(216,177,90,0.3)]"
+        >
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-.43 1.402L5.27 8.962a11.04 11.04 0 005.768 5.769l1.162-1.13a1.5 1.5 0 011.402-.43l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-7.18 0-13-5.82-13-13V3.5z" clip-rule="evenodd"/>
+          </svg>
+          {cta.label}
+        </a>
+        <a
+          href={`https://wa.me/${phone.replace(/\D/g, "")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/6 py-3 text-[13px] font-medium text-white/75"
+        >
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Mobile menu open/close */
+  .mobile-menu-closed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mobile-menu-open {
+    max-height: 800px;
+    transition: max-height 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Mobile services open/close */
+  .mobile-services-closed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  }
+  .mobile-services-open {
+    max-height: 600px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
+    transition: max-height 0.38s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  }
+
+  /* Hide/show on scroll */
+  #interior-navbar {
+    transform: translateY(0);
+    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s ease;
+    will-change: transform;
+  }
+  #interior-navbar.nav-hidden {
+    transform: translateY(-110%);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var menuBtn = document.getElementById("mobile-menu-btn");
+    var menu = document.getElementById("mobile-menu");
+    var iconOpen = document.getElementById("menu-icon-open");
+    var iconClose = document.getElementById("menu-icon-close");
+    var servicesBtn = document.getElementById("mobile-services-btn");
+    var servicesList = document.getElementById("mobile-services-list");
+    var servicesChevron = document.getElementById("mobile-services-chevron");
+
+    if (menuBtn && menu) {
+      menuBtn.addEventListener("click", function () {
+        var isOpen = menu.classList.contains("mobile-menu-open");
+        menu.classList.toggle("mobile-menu-open", !isOpen);
+        menu.classList.toggle("mobile-menu-closed", isOpen);
+        menu.setAttribute("aria-hidden", isOpen ? "true" : "false");
+        menuBtn.setAttribute("aria-expanded", isOpen ? "false" : "true");
+        if (iconOpen) iconOpen.classList.toggle("hidden", !isOpen);
+        if (iconClose) iconClose.classList.toggle("hidden", isOpen);
+      });
+    }
+
+    if (servicesBtn && servicesList && servicesChevron) {
+      servicesBtn.addEventListener("click", function () {
+        var isOpen = servicesList.classList.contains("mobile-services-open");
+        servicesList.classList.toggle("mobile-services-open", !isOpen);
+        servicesList.classList.toggle("mobile-services-closed", isOpen);
+        servicesBtn.setAttribute("aria-expanded", isOpen ? "false" : "true");
+        servicesChevron.style.transform = isOpen ? "" : "rotate(180deg)";
+      });
+    }
+
+    /* Hide on scroll down, reveal on scroll up */
+    var navbar = document.getElementById("interior-navbar");
+    var spacer = document.getElementById("interior-navbar-spacer");
+
+    if (navbar) {
+      var lastY = window.scrollY;
+      var navH = navbar.getBoundingClientRect().height;
+
+      /* Keep spacer height in sync */
+      if (spacer) spacer.style.height = navH + "px";
+      window.addEventListener("resize", function () {
+        navH = navbar.getBoundingClientRect().height;
+        if (spacer) spacer.style.height = navH + "px";
+      }, { passive: true });
+
+      window.addEventListener("scroll", function () {
+        var y = window.scrollY;
+        var diff = y - lastY;
+
+        /* Add shadow once past the top */
+        navbar.classList.toggle("shadow-[0_8px_40px_rgba(0,0,0,0.55)]", y > 12);
+
+        /* Only trigger hide/show after scrolling past the navbar height */
+        if (y > navH) {
+          if (diff > 4) {
+            /* Scrolling DOWN â€” hide */
+            navbar.classList.add("nav-hidden");
+          } else if (diff < -4) {
+            /* Scrolling UP â€” show */
+            navbar.classList.remove("nav-hidden");
+          }
+        } else {
+          /* Near the top â€” always show */
+          navbar.classList.remove("nav-hidden");
+        }
+
+        lastY = y;
+      }, { passive: true });
+    }
+  })();
+</script>

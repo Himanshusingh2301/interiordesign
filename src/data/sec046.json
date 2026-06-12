@@ -1,0 +1,17 @@
+{
+  "consultationBar": {
+    "help": {
+      "title": "Need Help?",
+      "subtitle": "Talk to Our Expert"
+    },
+    "stats": [
+      { "number": "15k+", "label": "Projects Done" },
+      { "number": "98%", "label": "Client Satisfaction" },
+      { "number": "24/7", "label": "Support Available" }
+    ],
+    "button": {
+      "text": "Get Consultation",
+      "link": "#contact"
+    }
+  }
+}

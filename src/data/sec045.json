@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "title": "Interior Designer in Indore | Premium Interior Designers, Architects & Decorators",
+    "description": "Premium interior designers in Indore for homes and offices. Free consultation call, site visits, 3D designs, and turnkey interiors from ₹25,000. Serving Vijay Nagar, Palasia, Scheme 54 & all Indore.",
+    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80"
+  },
+  "modernInteriorHero": {
+    "heading": "Interior Designer in Indore | Premium Interior Designers, Architects, and Decorators",
+    "description": "Most people start by calling us. We talk through your space, your budget, and what you want — no pressure, no one shows up at your door yet. When you are ready to move forward, we visit your site, prepare your floor plan and 3D designs, and give you a full cost breakdown before anything begins.",
+    "callButton": {
+      "label": "Book a Free Call",
+      "href": "tel:+919876543210"
+    },
+    "whatsapp": {
+      "label": "WhatsApp: +91 98765 43210",
+      "href": "https://wa.me/919876543210"
+    },
+    "cards": [
+      {
+        "icon": "home",
+        "title": "All spaces covered",
+        "description": "1BHK, 2BHK, 3BHK, Villas & houses"
+      },
+      {
+        "icon": "location",
+        "title": "Serve in Indore",
+        "description": "Vijay Nagar, Palasia, Scheme 54, 140+"
+      },
+      {
+        "icon": "rupee",
+        "title": "Turnkey Interiors",
+        "description": "Homes & Offices from ₹25,000"
+      }
+    ],
+    "images": {
+      "main": {
+        "src": "https://images.unsplash.com/photo-1618219944342-824e40a13285?auto=format&fit=crop&w=800&q=85",
+        "alt": "Luxury dark interior design with warm golden lighting — premium home project in Indore"
+      },
+      "lamp": {
+        "src": "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=85",
+        "alt": "Dark moody bedroom interior with warm accent lighting by Indore interior designers"
+      },
+      "chair": {
+        "src": "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=600&q=85",
+        "alt": "Warm dark wood and ambient lighting interior design by architects in Indore"
+      }
+    },
+    "business": {
+      "name": "Premium Interior Designers Indore",
+      "telephone": "+91 98765 43210",
+      "addressLocality": "Indore",
+      "addressRegion": "Madhya Pradesh",
+      "addressCountry": "IN",
+      "areaServed": [
+        "Indore",
+        "Vijay Nagar, Indore",
+        "Palasia, Indore",
+        "Scheme 54, Indore"
+      ],
+      "priceRange": "₹₹"
+    }
+  }
+}

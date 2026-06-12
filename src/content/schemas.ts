@@ -206,6 +206,51 @@ export const contactCardsPropsSchema = z.object({
     .optional(),
 });
 
+export const sec045CardIconSchema = z.enum(["home", "location", "rupee"]);
+
+export const sec045CardSchema = z.object({
+  icon: sec045CardIconSchema,
+  title: z.string(),
+  description: z.string(),
+});
+
+export const sec045BusinessSchema = z.object({
+  name: z.string(),
+  telephone: z.string(),
+  addressLocality: z.string(),
+  addressRegion: z.string(),
+  addressCountry: z.string().default("IN"),
+  areaServed: z.array(z.string()).min(1),
+  priceRange: z.string().optional(),
+});
+
+export const sec045PropsSchema = z.object({
+  heading: z.string(),
+  description: z.string(),
+  callButton: ctaSchema,
+  whatsapp: ctaSchema,
+  cards: z.array(sec045CardSchema).min(1).max(3),
+  images: z.object({
+    main: imageSchema,
+    lamp: imageSchema,
+    chair: imageSchema,
+  }),
+  business: sec045BusinessSchema,
+});
+
+export const sec045PageMetaSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  ogImage: z.string().optional(),
+});
+
+export const sec045ContentSchema = z.object({
+  meta: sec045PageMetaSchema,
+  modernInteriorHero: sec045PropsSchema,
+});
+
+export type Sec045Content = z.infer<typeof sec045ContentSchema>;
+
 export const siteFooterPropsSchema = z.object({
   logo: z
     .object({

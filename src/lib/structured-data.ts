@@ -43,6 +43,9 @@ export interface LocalBusinessInput {
   sameAs?: string[];
   /** e.g. ["Mo-Sa 08:00-18:00"] */
   openingHours?: string[];
+  /** Extra schema.org types, e.g. HomeAndConstructionBusiness */
+  additionalTypes?: string[];
+  image?: string;
 }
 
 export function localBusinessSchema(input: LocalBusinessInput): Json {
@@ -55,15 +58,21 @@ export function localBusinessSchema(input: LocalBusinessInput): Json {
     addressCountry: input.addressCountry ?? "US",
   });
 
+  const businessType =
+    input.additionalTypes && input.additionalTypes.length > 0
+      ? ["LocalBusiness", ...input.additionalTypes]
+      : "LocalBusiness";
+
   return compact({
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": businessType,
     "@id": `${input.url.replace(/\/$/, "")}/#business`,
     name: input.name,
     url: input.url,
     description: input.description,
     telephone: toE164Phone(input.telephone),
     email: input.email,
+    image: input.image,
     ...(Object.keys(address).length > 1 ? { address } : {}),
     areaServed: input.areaServed,
     priceRange: input.priceRange,

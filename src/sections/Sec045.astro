@@ -1,0 +1,193 @@
+---
+import { sec045ContentSchema } from "../content/schemas";
+import sec045Data from "../data/sec045.json";
+
+const content = sec045ContentSchema.parse(sec045Data);
+const section = content.modernInteriorHero;
+
+type CardIcon = typeof section.cards[number]["icon"];
+
+const cardIcons: Record<Exclude<CardIcon, "rupee">, string> = {
+  home: "M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6H8v6H4a1 1 0 01-1-1v-9.5z",
+  location:
+    "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z",
+};
+
+const callAriaLabel = `${section.callButton.label} for interior design consultation in Indore`;
+const whatsappAriaLabel = `Contact interior designers in Indore on WhatsApp at ${section.business.telephone}`;
+---
+
+<section
+  class="overflow-hidden bg-[#F5EFE6]"
+  style="min-height: calc(100svh - var(--navbar-h, 72px)); display: flex; align-items: center;"
+  aria-labelledby="sec045-hero-heading"
+>
+  <div class="mx-auto w-[92%] max-w-[1350px] py-8 lg:py-10">
+
+    <div class="grid items-stretch gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
+
+      <!-- Left column -->
+      <div class="flex flex-col justify-center">
+
+        <!-- 1. Heading -->
+        <h1
+          id="sec045-hero-heading"
+          class="max-w-[580px] text-[26px] font-semibold leading-[1.15] text-[#1C1008] sm:text-[32px] lg:text-[38px]"
+          style="font-family: 'Cormorant Garamond', serif;"
+          data-reveal="up"
+          data-reveal-delay="0"
+        >
+          {section.heading}
+        </h1>
+
+        <!-- 2. Description -->
+        <p
+          class="mt-3 max-w-[580px] text-[14px] leading-[1.75] text-[#4A3525] lg:text-[15px]"
+          data-reveal="up"
+          data-reveal-delay="280"
+        >
+          {section.description}
+        </p>
+
+        <!-- 3. MOBILE IMAGES — hidden on lg+ (desktop uses the absolute-positioned right column) -->
+        <figure
+          class="mt-5 flex gap-2.5 lg:hidden"
+          data-reveal="up"
+          data-reveal-delay="420"
+        >
+          <div class="overflow-hidden rounded-[16px] shadow-[0_12px_32px_rgba(0,0,0,0.14)]" style="flex: 1.15; min-width: 0; aspect-ratio: 3/4;">
+            <img
+              src={section.images.main.src}
+              alt={section.images.main.alt}
+              width="800"
+              height="960"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="flex flex-col gap-2.5" style="flex: 0.85; min-width: 0;">
+            <div class="min-h-0 flex-1 overflow-hidden rounded-[16px] shadow-[0_8px_24px_rgba(0,0,0,0.11)]">
+              <img src={section.images.lamp.src} alt={section.images.lamp.alt} width="600" height="480" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+            </div>
+            <div class="min-h-0 flex-1 overflow-hidden rounded-[16px] shadow-[0_8px_24px_rgba(0,0,0,0.11)]">
+              <img src={section.images.chair.src} alt={section.images.chair.alt} width="600" height="480" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+            </div>
+          </div>
+        </figure>
+
+        <!-- 4. BUTTONS — one row, each takes equal width on mobile -->
+        <nav
+          class="order-1 mt-5 flex items-center gap-2.5 lg:order-2 lg:gap-3"
+          aria-label="Book interior design consultation"
+          data-reveal="up"
+          data-reveal-delay="560"
+        >
+
+          <a
+            href={section.callButton.href}
+            class="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#d8b15a] px-4 py-3 text-[13.5px] font-semibold text-[#1f2d2d] transition duration-300 hover:scale-105 hover:bg-[#e8c56a] lg:flex-none lg:px-6 lg:text-[15px]"
+            aria-label={callAriaLabel}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 shrink-0" aria-hidden="true">
+              <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-.43 1.402L5.27 8.962a11.04 11.04 0 0 0 5.768 5.769l1.162-1.13a1.5 1.5 0 0 1 1.402-.43l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-7.18 0-13-5.82-13-13V3.5Z" clip-rule="evenodd" />
+            </svg>
+            <span class="lg:hidden">Call Now</span>
+            <span class="hidden lg:inline">{section.callButton.label}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 shrink-0" aria-hidden="true">
+              <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.138-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+            </svg>
+          </a>
+
+          <a
+            href={section.whatsapp.href}
+            class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#25D366]/40 bg-[#25D366]/10 px-4 py-3 text-[13.5px] font-medium text-[#1a7a40] transition duration-300 hover:border-[#25D366]/70 hover:bg-[#25D366]/20 lg:flex-none lg:px-6 lg:text-[14px]"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={whatsappAriaLabel}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 shrink-0" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span class="lg:hidden">Chat Now</span>
+            <span class="hidden lg:inline">{section.whatsapp.label}</span>
+          </a>
+
+        </nav>
+
+        <!-- 5. CARDS -->
+        <ul
+          class="order-2 mt-4 grid grid-cols-3 gap-2 lg:order-1"
+          aria-label="Interior design services and coverage in Indore"
+        >
+          {
+            section.cards.map((card, index) => (
+              <li
+                class="group relative overflow-hidden rounded-xl border border-[#d8b15a]/35 bg-gradient-to-br from-[#EDE8DE] to-[#E4DDCF] px-2 py-3 text-center shadow-[0_4px_20px_rgba(0,0,0,0.07)] transition duration-300 hover:-translate-y-0.5 hover:border-[#d8b15a]/65 hover:shadow-[0_10px_30px_rgba(216,177,90,0.16)] sm:px-3 sm:py-4"
+                data-reveal="up"
+                data-reveal-delay={String(700 + index * 130)}
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#d8b15a]/10 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
+                <div class="relative mx-auto flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#e8c56a] to-[#c49a3f] text-[#2a211c] shadow-md shadow-[#d8b15a]/20 sm:h-10 sm:w-10">
+                  {
+                    card.icon === "rupee" ? (
+                      <span class="text-[17px] font-bold leading-none sm:text-[20px]" aria-hidden="true">₹</span>
+                    ) : (
+                      <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d={cardIcons[card.icon]} />
+                      </svg>
+                    )
+                  }
+                </div>
+                <h2 class="relative mt-2 text-[11px] font-semibold leading-snug text-[#1C1008] sm:text-[13px] lg:text-[14px]">
+                  {card.title}
+                </h2>
+                <p class="relative mt-1 text-[10px] leading-relaxed text-[#5A4535] sm:text-[11.5px] lg:text-[12.5px]">
+                  {card.description}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+
+      </div>
+
+      <!-- Desktop-only right image column -->
+      <div class="relative hidden lg:block">
+        <figure
+          class="absolute inset-0 flex gap-3"
+          data-reveal="right"
+          data-reveal-delay="400"
+        >
+          <div class="overflow-hidden rounded-[22px] shadow-[0_20px_56px_rgba(0,0,0,0.16)]" style="flex: 1.15; min-width: 0;">
+            <img
+              src={section.images.main.src}
+              alt={section.images.main.alt}
+              width="800"
+              height="960"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
+              class="h-full w-full object-cover transition duration-700 hover:scale-105"
+            />
+          </div>
+          <div class="flex flex-col gap-3" style="flex: 0.85; min-width: 0;">
+            <div class="min-h-0 flex-1 overflow-hidden rounded-[22px] shadow-[0_12px_40px_rgba(0,0,0,0.13)]">
+              <img src={section.images.lamp.src} alt={section.images.lamp.alt} width="600" height="480" loading="lazy" decoding="async" class="h-full w-full object-cover transition duration-700 hover:scale-105" />
+            </div>
+            <div class="min-h-0 flex-1 overflow-hidden rounded-[22px] shadow-[0_12px_40px_rgba(0,0,0,0.13)]">
+              <img src={section.images.chair.src} alt={section.images.chair.alt} width="600" height="480" loading="lazy" decoding="async" class="h-full w-full object-cover transition duration-700 hover:scale-105" />
+            </div>
+          </div>
+        </figure>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
