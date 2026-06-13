@@ -1,0 +1,41 @@
+{
+  "freeDeliverablesSection": {
+    "title": "What Do You Get Free — Before Paying a Single Rupee?",
+    "description": "After one phone consultation, you receive five professional deliverables free: a 2D layout plan, 3D design renders of your key rooms, a Scope of Work (SOW) document, a materials and brands plan, and 2–3 design theme options.",
+    "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+    "items": [
+      {
+        "number": "01",
+        "title": "2D layout plan",
+        "description": "Furniture placement, circulation space, and storage mapped on your floor plan, so you see exactly what fits where."
+      },
+      {
+        "number": "02",
+        "title": "3D design renders",
+        "description": "Realistic views of your living room, kitchen, and bedrooms in your chosen theme, so you judge the design, not a promise."
+      },
+      {
+        "number": "03",
+        "title": "Scope of Work document",
+        "description": "Every task listed: false ceiling, electrical points, carpentry, painting. No \"we'll see later\" items."
+      },
+      {
+        "number": "04",
+        "title": "Materials & brands plan",
+        "description": "Which plywood grade, which laminate, which hardware brand goes into each unit, written down before you commit."
+      },
+      {
+        "number": "05",
+        "title": "Itemized cost sheet",
+        "description": "Every line priced separately, with a good/better/best option on each, so you control the budget item by item."
+      }
+    ],
+    "whyFree": {
+      "text": "Because we believe you should hire a designer after seeing their thinking, not before. One phone call is all it takes to start.",
+      "cta": {
+        "label": "Book My Free Call",
+        "href": "#contact"
+      }
+    }
+  }
+}

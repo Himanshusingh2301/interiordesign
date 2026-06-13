@@ -4,6 +4,7 @@ import RevealScript from "../components/RevealScript.astro";
 import InteriorNavbar from "../sections/InteriorNavbar.astro";
 import Sec045 from "../sections/Sec045.astro";
 import Sec046 from "../sections/Sec046.astro";
+import Sec052 from "../sections/Sec052.astro";
 import { sec045ContentSchema } from "../content/schemas";
 import sec045Data from "../data/sec045.json";
 import { localBusinessSchema, serviceSchema } from "../lib/structured-data";
@@ -16,6 +17,10 @@ const business = modernInteriorHero.business;
 const siteUrl = resolveSiteUrl();
 const pageUrl = `${siteUrl}/`;
 const businessId = `${pageUrl.replace(/\/$/, "")}/#business`;
+
+const heroDescription = Array.isArray(modernInteriorHero.description)
+  ? modernInteriorHero.description.join(" ")
+  : modernInteriorHero.description;
 
 const jsonLd = [
   localBusinessSchema({
@@ -33,7 +38,7 @@ const jsonLd = [
   }),
   serviceSchema({
     name: "Interior Design Services in Indore",
-    description: modernInteriorHero.description,
+    description: heroDescription,
     url: pageUrl,
     serviceType: "Interior Design",
     areaServed: business.areaServed,
@@ -58,6 +63,7 @@ const jsonLd = [
   <main id="main-content">
     <Sec045 />
     <Sec046 />
+    <Sec052 />
   </main>
 
   <RevealScript />
